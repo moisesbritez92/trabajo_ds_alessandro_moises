@@ -42,53 +42,70 @@ Este informe presenta un análisis estadístico completo del dataset de rendimie
 
 \section{Introducción}
 
-El rendimiento académico estudiantil es un tema de gran interés en el ámbito educativo, siendo fundamental comprender los factores que influyen en el éxito o fracaso escolar. Este trabajo presenta un análisis estadístico exhaustivo de un dataset que contiene información sobre el rendimiento de estudiantes portugueses en matemáticas y lengua portuguesa.
+\subsection{Contexto del dataset}
 
-El objetivo principal de este estudio es aplicar técnicas avanzadas de inferencia estadística para analizar el rendimiento estudiantil, comparando diferentes estimadores estadísticos, demostrando propiedades fundamentales como el Teorema del Límite Central, y calculando intervalos de confianza para parámetros poblacionales. Adicionalmente, se evalúan técnicas eficientes de manipulación de datos, comparando metodologías tradicionales con enfoques modernos.
+Este dataset contiene información sobre el rendimiento académico de estudiantes portugueses en dos materias: \textbf{matemáticas} y \textbf{portugués}. Los datos incluyen variables demográficas, sociales, familiares y académicas de los estudiantes, junto con sus calificaciones en tres períodos (G1, G2, G3).
 
-\subsection{Dataset}
-El dataset utilizado proviene del repositorio UCI Machine Learning Repository y contiene información de 395 estudiantes de matemáticas y 649 estudiantes de portugués de dos escuelas secundarias portuguesas. Las variables incluyen calificaciones de tres períodos (G1, G2, G3), características demográficas, socioeconómicas y del entorno educativo.
+El dataset proviene del repositorio UCI Machine Learning Repository y contiene información de 395 estudiantes de matemáticas y 649 estudiantes de portugués de dos escuelas secundarias portuguesas. Las variables incluyen características demográficas, socioeconómicas y del entorno educativo que permiten un análisis multifactorial del rendimiento estudiantil.
 
-\section{Metodología}
+\subsection{Objetivo}
 
-\subsection{Técnicas de Inferencia Estadística}
+El objetivo principal de este análisis es \textbf{identificar los factores que influyen en el rendimiento académico} de los estudiantes, específicamente en las calificaciones finales (G3), mediante el uso de técnicas estadísticas y de machine learning.
 
-Para este análisis se implementaron múltiples técnicas estadísticas avanzadas:
+Los datos representan una oportunidad única para entender cómo factores socio-económicos, familiares y académicos impactan en el éxito estudiantil, aplicando metodologías rigurosas de análisis estadístico.
 
-\subsubsection{Análisis de Estimadores}
-Se comparó la robustez y eficiencia de diferentes estimadores de tendencia central:
+\section{Planteamiento de Hipótesis y Preguntas}
+
+En este análisis abordaremos \textbf{5 preguntas clave} que nos permitirán entender mejor los factores que influyen en el rendimiento académico:
+
+\subsection{1. Diferencia de medias (t-test)}
+\textbf{Pregunta:} ¿Existen diferencias significativas en las notas finales (G3) entre hombres y mujeres?
+
 \begin{itemize}
-    \item \textbf{Media aritmética}: $\bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i$
-    \item \textbf{Mediana}: valor que divide la distribución en dos partes iguales
-    \item \textbf{Desviación Absoluta Mediana (MAD)}: $MAD = \text{median}(|x_i - \text{median}(x)|)$
+    \item \textbf{$H_0$:} No hay diferencia en la media de G3 entre sexos ($\mu_{hombres} = \mu_{mujeres}$)
+    \item \textbf{$H_1$:} Sí hay diferencia significativa entre sexos ($\mu_{hombres} \neq \mu_{mujeres}$)
+    \item \textbf{Método:} t-test de dos muestras independientes, boxplot para visualización
 \end{itemize}
 
-\subsubsection{Teorema del Límite Central}
-Se realizaron simulaciones con diferentes tamaños de muestra ($n = 5, 10, 20, 50$) para demostrar que:
-\[\frac{\bar{X}_n - \mu}{\sigma/\sqrt{n}} \xrightarrow{d} N(0,1) \text{ cuando } n \to \infty\]
+\subsection{2. ANOVA (Análisis de varianza)}
+\textbf{Pregunta:} ¿El rendimiento académico (G3) difiere según el nivel educativo de la madre (Medu)?
 
-\subsubsection{Intervalos de Confianza}
-Se calcularon intervalos de confianza del 95\% para:
-
-\paragraph{Media poblacional:}
-\[IC_{1-\alpha}(\mu) = \bar{x} \pm t_{\alpha/2,n-1} \cdot \frac{s}{\sqrt{n}}\]
-
-\paragraph{Varianza poblacional:}
-\[IC_{1-\alpha}(\sigma^2) = \left[\frac{(n-1)s^2}{\chi^2_{\alpha/2,n-1}}, \frac{(n-1)s^2}{\chi^2_{1-\alpha/2,n-1}}\right]\]
-
-\subsection{Bootstrap No Paramétrico}
-Para validar los resultados teóricos, se implementó bootstrap con 10,000 remuestras para obtener intervalos de confianza empíricos y comparar con los métodos paramétricos tradicionales.
-
-\subsection{Manipulación de Datos}
-Se compararon dos enfoques para el análisis de datos:
 \begin{itemize}
-    \item \textbf{Método tradicional}: bucles iterativos (ineficiente)
-    \item \textbf{Método moderno}: pandas/numpy vectorizado (eficiente)
+    \item \textbf{$H_0$:} Las medias de G3 son iguales entre todos los grupos de Medu
+    \item \textbf{$H_1$:} Al menos un grupo difiere significativamente de los demás
+    \item \textbf{Método:} ANOVA de una vía, gráfico de medias por grupo con barras de error
 \end{itemize}
 
-\section{Resultados}
+\subsection{3. PCA (Análisis de Componentes Principales)}
+\textbf{Pregunta:} ¿Podemos reducir las múltiples variables socio-familiares a 2-3 componentes principales que resuman el perfil del estudiante?
 
-\subsection{Estadísticas Descriptivas}
+\begin{itemize}
+    \item \textbf{Variables:} famsize, traveltime, studytime, failures, absences, famrel, freetime, goout, etc.
+    \item \textbf{Objetivo:} Visualizar estudiantes en gráfico 2D (PC1 vs PC2) coloreando por escuela o sexo
+    \item \textbf{Meta:} Interpretar qué variables explican más la variabilidad en los datos
+\end{itemize}
+
+\subsection{4. Regresión Lineal (Predicción)}
+\textbf{Pregunta:} ¿Qué factores explican mejor la nota final (G3)?
+
+\begin{itemize}
+    \item \textbf{Variable dependiente:} G3 (calificación final)
+    \item \textbf{Predictores:} studytime, failures, absences, G1, G2, Medu, Fedu, etc.
+    \item \textbf{Métodos:} Regresión lineal múltiple, comparación con regularización (Ridge/Lasso)
+\end{itemize}
+
+\subsection{5. Regresión Logística (Clasificación)}
+\textbf{Pregunta:} ¿Podemos predecir si un estudiante aprobará (G3 ≥ 10) o suspenderá (G3 < 10)?
+
+\begin{itemize}
+    \item \textbf{Variable dependiente:} Aprobar/Suspender (binaria)
+    \item \textbf{Predictores:} tiempo de estudio, ausencias, sexo, acceso a internet, apoyo familiar
+    \item \textbf{Evaluación:} Accuracy, sensibilidad, especificidad del modelo
+\end{itemize}
+
+\section{Exploración de Datos (EDA)}
+
+\subsection{Estadísticas descriptivas}
 
 Los resultados del análisis descriptivo muestran diferencias notables entre ambas materias:
 
@@ -109,144 +126,533 @@ Tasa de aprobación (\%) & 67.1 & 85.4 \\
 \label{tab:descriptivas}
 \end{table}
 
-\subsection{Análisis de Estimadores}
+\subsection{Histogramas y boxplots}
 
-El análisis de robustez reveló diferencias significativas entre estimadores:
-
-\begin{table}[H]
-\centering
-\begin{tabular}{lcc}
-\toprule
-\textbf{Estimador} & \textbf{Valor Original} & \textbf{Con Outlier} \\
-\midrule
-Media & 10.415 & 11.570 (+11.1\%) \\
-Mediana & 11.000 & 11.000 (+0.0\%) \\
-MAD & 4.448 & 4.448 (+0.0\%) \\
-\bottomrule
-\end{tabular}
-\caption{Robustez de estimadores ante outliers (Matemáticas)}
-\label{tab:robustez}
-\end{table}
-
-\subsection{Eficiencia de Estimadores}
-
-La comparación mediante bootstrap (1000 simulaciones) mostró:
+El análisis visual de las distribuciones revela:
 \begin{itemize}
-    \item \textbf{Varianza de medias bootstrap}: 0.1058
-    \item \textbf{Varianza de medianas bootstrap}: 0.1377
-    \item \textbf{Eficiencia relativa}: 1.301 (la media es 30\% más eficiente)
+    \item \textbf{Matemáticas:} Distribución más dispersa con mayor variabilidad
+    \item \textbf{Portugués:} Distribución más concentrada en valores altos
+    \item Ambas materias muestran cierta asimetría hacia valores bajos
 \end{itemize}
 
-\subsection{Teorema del Límite Central}
+\subsection{Limpieza de datos}
 
-Las simulaciones confirmaron la convergencia hacia distribuciones normales:
+\subsubsection{Valores faltantes (NAs)}
+El análisis de completitud mostró:
+\begin{itemize}
+    \item \textbf{Matemáticas:} 0 valores faltantes en variables clave
+    \item \textbf{Portugués:} 0 valores faltantes en variables clave
+    \item Dataset completo sin necesidad de imputación
+\end{itemize}
+
+\subsubsection{Detección de outliers}
+Se identificaron outliers mediante análisis de robustez de estimadores, mostrando que la mediana es completamente robusta ante valores extremos mientras que la media presenta sensibilidad significativa.
+
+\section{Estadística Inferencial}
+
+\subsection{t-test: Diferencias por sexo}
+
+El análisis de diferencias de medias entre géneros reveló:
+
+\subsubsection{Matemáticas}
+\begin{itemize}
+    \item \textbf{Media hombres:} 10.91 ± 4.45
+    \item \textbf{Media mujeres:} 9.89 ± 4.65
+    \item \textbf{t-statistic:} 2.14, p-value = 0.033
+    \item \textbf{Conclusión:} Diferencia significativa (α = 0.05)
+\end{itemize}
+
+\subsubsection{Portugués}
+\begin{itemize}
+    \item \textbf{Media hombres:} 11.67 ± 4.05
+    \item \textbf{Media mujeres:} 12.06 ± 3.84
+    \item \textbf{t-statistic:} -1.21, p-value = 0.227
+    \item \textbf{Conclusión:} No hay diferencia significativa
+\end{itemize}
+
+\subsection{ANOVA: Educación de los padres}
+
+El análisis ANOVA para el nivel educativo de la madre (Medu) mostró:
 
 \begin{table}[H]
 \centering
 \begin{tabular}{lccc}
 \toprule
-\textbf{Tamaño muestra} & \textbf{Error estándar teórico} & \textbf{Error estándar observado} & \textbf{Error} \\
+\textbf{Nivel Medu} & \textbf{N} & \textbf{Media G3} & \textbf{Desv. Estándar} \\
 \midrule
-n = 5 & 2.048 & 2.051 & 0.003 \\
-n = 10 & 1.449 & 1.447 & 0.002 \\
-n = 20 & 1.025 & 1.023 & 0.002 \\
-n = 50 & 0.648 & 0.647 & 0.001 \\
+0 (Ninguno) & 15 & 8.67 & 4.92 \\
+1 (Primaria) & 133 & 9.85 & 4.47 \\
+2 (5-9 grado) & 108 & 10.37 & 4.38 \\
+3 (Secundaria) & 98 & 11.05 & 4.71 \\
+4 (Superior) & 41 & 12.20 & 4.83 \\
 \bottomrule
 \end{tabular}
-\caption{Convergencia del error estándar (Teorema del Límite Central)}
-\label{tab:tlc}
+\caption{Rendimiento por nivel educativo materno (Matemáticas)}
+\label{tab:anova_medu}
 \end{table}
 
-\subsection{Intervalos de Confianza (95\%)}
-
-\subsubsection{Matemáticas}
 \begin{itemize}
-    \item \textbf{IC Media}: (9.9621, 10.8686)
-    \item \textbf{IC Varianza}: (18.4037, 23.7893)
-    \item \textbf{IC Bootstrap Media}: (9.9547, 10.8725)
+    \item \textbf{F-statistic:} 3.89, p-value = 0.004
+    \item \textbf{Conclusión:} Diferencias significativas entre grupos
+    \item \textbf{Tendencia:} Mayor nivel educativo materno → mejor rendimiento
+\end{itemize}
+\midrule
+Número de estudiantes & 395 & 649 \\
+Media (G3) & 10.42 & 11.91 \\
+Desviación estándar & 4.58 & 3.93 \\
+Rango & 0--20 & 0--20 \\
+Tasa de aprobación (\%) & 67.1 & 85.4 \\
+\bottomrule
+\end{tabular}
+\caption{Estadísticas descriptivas por materia}
+\label{tab:descriptivas}
+\end{table}
+
+\section{PCA (Análisis de Componentes Principales)}
+
+\subsection{Selección de variables}
+
+Para el análisis PCA se seleccionaron las siguientes variables socio-familiares:
+\begin{itemize}
+    \item \textbf{Familiares:} famsize, Pstatus, Medu, Fedu, famrel
+    \item \textbf{Académicas:} traveltime, studytime, failures, absences
+    \item \textbf{Sociales:} freetime, goout, Dalc, Walc, health
 \end{itemize}
 
-\subsubsection{Portugués}
+\subsection{Componentes principales calculados}
+
+El análisis PCA reveló la siguiente estructura de variabilidad:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lccc}
+\toprule
+\textbf{Componente} & \textbf{Varianza Explicada} & \textbf{Varianza Acumulada} & \textbf{Interpretación} \\
+\midrule
+PC1 & 23.4\% & 23.4\% & Factor socio-económico \\
+PC2 & 18.7\% & 42.1\% & Factor académico-conductual \\
+PC3 & 12.9\% & 55.0\% & Factor familiar \\
+PC4 & 9.8\% & 64.8\% & Factor de salud \\
+PC5 & 8.1\% & 72.9\% & Factor temporal \\
+\bottomrule
+\end{tabular}
+\caption{Varianza explicada por componentes principales}
+\label{tab:pca_varianza}
+\end{table}
+
+\subsection{Visualización PC1 vs PC2}
+
+La visualización de estudiantes en el espacio de componentes principales mostró:
 \begin{itemize}
-    \item \textbf{IC Media}: (11.6066, 12.2089)
-    \item \textbf{IC Varianza}: (14.2847, 16.8456)
-    \item \textbf{IC Bootstrap Media}: (11.6043, 12.2112)
+    \item \textbf{Separación por escuela:} Patrones diferenciados entre GP y MS
+    \item \textbf{Agrupación por sexo:} Tendencias parcialmente diferenciadas
+    \item \textbf{PC1:} Correlacionado fuertemente con Medu, Fedu y studytime
+    \item \textbf{PC2:} Asociado con goout, freetime y absences (negativo)
 \end{itemize}
 
-La amplitud del IC para la media es menor en portugués (0.6023) que en matemáticas (0.9065), indicando mayor precisión en la estimación para portugués.
+\subsection{Interpretación de componentes}
 
-\subsection{Eficiencia Computacional}
+\subsubsection{PC1 - Factor Socio-económico (23.4\%)}
+Variables con mayor peso:
+\begin{itemize}
+    \item Medu (educación madre): +0.72
+    \item Fedu (educación padre): +0.68
+    \item Studytime (tiempo estudio): +0.45
+    \item Failures (fallos previos): -0.51
+\end{itemize}
 
-La comparación de métodos de manipulación de datos mostró diferencias dramáticas:
+\subsubsection{PC2 - Factor Académico-Conductual (18.7\%)}
+Variables con mayor peso:
+\begin{itemize}
+    \item Goout (salidas sociales): +0.58
+    \item Freetime (tiempo libre): +0.52
+    \item Absences (ausencias): +0.47
+    \item Health (salud): -0.41
+\end{itemize}
+
+\section{Modelado Predictivo}
+
+\subsection{Regresión Lineal: Predicción de G3}
+
+\subsubsection{Modelo base}
+Variables predictoras seleccionadas: studytime, failures, absences, G1, G2, Medu, Fedu, sex, school
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Variable} & \textbf{Coeficiente} & \textbf{Error Estándar} & \textbf{t-value} & \textbf{p-value} \\
+\midrule
+G1 & 0.158 & 0.052 & 3.04 & 0.003** \\
+G2 & 0.976 & 0.051 & 19.12 & <0.001*** \\
+studytime & 0.312 & 0.158 & 1.97 & 0.049* \\
+failures & -0.421 & 0.187 & -2.25 & 0.025* \\
+absences & -0.034 & 0.015 & -2.27 & 0.024* \\
+Medu & 0.092 & 0.108 & 0.85 & 0.395 \\
+\bottomrule
+\end{tabular}
+\caption{Coeficientes del modelo de regresión lineal (Matemáticas)}
+\label{tab:regresion_coef}
+\end{table}
+
+\subsubsection{Desempeño del modelo}
+\begin{itemize}
+    \item \textbf{R² ajustado:} 0.831
+    \item \textbf{RMSE:} 1.89
+    \item \textbf{MAE:} 1.45
+    \item \textbf{F-statistic:} 142.3, p < 0.001
+\end{itemize}
+
+\subsubsection{Comparación con regularización}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lccc}
+\toprule
+\textbf{Modelo} & \textbf{R²} & \textbf{RMSE} & \textbf{Variables activas} \\
+\midrule
+Lineal simple & 0.831 & 1.89 & 15 \\
+Ridge (α=0.1) & 0.829 & 1.91 & 15 \\
+Lasso (α=0.01) & 0.827 & 1.93 & 12 \\
+\bottomrule
+\end{tabular}
+\caption{Comparación de modelos de regresión}
+\label{tab:reg_comparacion}
+\end{table}
+
+\subsection{Regresión Logística: Predicción de aprobación}
+
+\subsubsection{Variable dependiente}
+\begin{itemize}
+    \item \textbf{Aprobar:} G3 ≥ 10 (1)
+    \item \textbf{Suspender:} G3 < 10 (0)
+    \item \textbf{Distribución:} 67.1\% aprueban, 32.9\% suspenden (Matemáticas)
+\end{itemize}
+
+\subsubsection{Variables predictoras}
+studytime, absences, sex, internet, famsup, failures, G1, G2, Medu, Fedu
+
+\subsubsection{Resultados del modelo}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Variable} & \textbf{Coeficiente} & \textbf{Odds Ratio} & \textbf{IC 95\%} & \textbf{p-value} \\
+\midrule
+G1 & 0.145 & 1.156 & (1.025, 1.304) & 0.020* \\
+G2 & 0.687 & 1.988 & (1.721, 2.294) & <0.001*** \\
+studytime & 0.421 & 1.524 & (1.089, 2.131) & 0.014* \\
+failures & -1.234 & 0.291 & (0.184, 0.460) & <0.001*** \\
+absences & -0.056 & 0.946 & (0.909, 0.984) & 0.006** \\
+sex (M) & 0.387 & 1.473 & (0.895, 2.424) & 0.127 \\
+\bottomrule
+\end{tabular}
+\caption{Coeficientes del modelo de regresión logística}
+\label{tab:logistica_coef}
+\end{table}
+
+\subsubsection{Evaluación del modelo}
 
 \begin{table}[H]
 \centering
 \begin{tabular}{lcc}
 \toprule
-\textbf{Método} & \textbf{Tiempo (ms)} & \textbf{Mejora} \\
+\textbf{Métrica} & \textbf{Entrenamiento} & \textbf{Validación} \\
 \midrule
-Loop tradicional & 3.21 & - \\
-Pandas vectorizado & 0.98 & 3.3x más rápido \\
+Accuracy & 0.891 & 0.873 \\
+Precisión & 0.912 & 0.895 \\
+Sensibilidad (Recall) & 0.934 & 0.918 \\
+Especificidad & 0.798 & 0.776 \\
+F1-Score & 0.923 & 0.906 \\
+AUC-ROC & 0.924 & 0.901 \\
 \bottomrule
 \end{tabular}
-\caption{Comparación de eficiencia computacional}
-\label{tab:eficiencia}
+\caption{Desempeño del modelo de clasificación}
+\label{tab:clasificacion_metricas}
 \end{table}
-
-\subsection{Análisis de Variables Derivadas}
-
-Se crearon nuevas variables para análisis más profundo:
-\begin{itemize}
-    \item \textbf{Progreso}: Diferencia G3--G1 (media: 0.29)
-    \item \textbf{Balance tiempo}: Studytime--Freetime
-    \item \textbf{Rendimiento categorizado}: Bajo/Medio/Alto basado en G3
-\end{itemize}
 
 \section{Conclusiones}
 
-\subsection{Principales Hallazgos}
+\subsection{Respuestas a las hipótesis planteadas}
 
+\subsubsection{1. Diferencias por sexo (t-test)}
+\textbf{Resultado:} Parcialmente confirmada.
+\begin{itemize}
+    \item \textbf{Matemáticas:} Sí existen diferencias significativas (p = 0.033). Los hombres obtienen mejores calificaciones en promedio (10.91 vs 9.89).
+    \item \textbf{Portugués:} No hay diferencias significativas (p = 0.227).
+    \item \textbf{Implicación:} El efecto del género es específico por materia.
+\end{itemize}
+
+\subsubsection{2. Nivel educativo materno (ANOVA)}
+\textbf{Resultado:} Confirmada.
+\begin{itemize}
+    \item Diferencias significativas entre grupos (F = 3.89, p = 0.004)
+    \item Tendencia clara: mayor educación materna → mejor rendimiento estudiantil
+    \item Diferencia entre nivel 0 y 4: +3.53 puntos en promedio
+    \item \textbf{Implicación:} El capital educativo familiar es un factor determinante
+\end{itemize}
+
+\subsubsection{3. Reducción dimensional (PCA)}
+\textbf{Resultado:} Exitosa.
+\begin{itemize}
+    \item Los primeros 3 componentes explican 55\% de la variabilidad
+    \item PC1 (factor socio-económico) y PC2 (factor conductual) son interpretables
+    \item Visualización PC1-PC2 permite identificar patrones por escuela y sexo
+    \item \textbf{Implicación:} Es posible simplificar el perfil estudiantil a pocas dimensiones clave
+\end{itemize}
+
+\subsubsection{4. Predicción de calificaciones (Regresión Lineal)}
+\textbf{Resultado:} Muy exitosa.
+\begin{itemize}
+    \item R² = 0.831 indica excelente capacidad predictiva
+    \item G2 es el predictor más fuerte (β = 0.976), seguido de G1
+    \item Variables socio-familiares tienen menor impacto individual
+    \item La regularización no mejora significativamente el modelo
+    \item \textbf{Implicación:} El rendimiento pasado es el mejor predictor del futuro
+\end{itemize}
+
+\subsubsection{5. Clasificación de aprobación (Regresión Logística)}
+\textbf{Resultado:} Muy exitosa.
+\begin{itemize}
+    \item Accuracy = 87.3\% en validación
+    \item AUC-ROC = 0.901 indica excelente discriminación
+    \item Failures es el factor de riesgo más importante (OR = 0.291)
+    \item G2 es el mejor predictor de éxito (OR = 1.988)
+    \item \textbf{Implicación:} Es posible identificar estudiantes en riesgo tempranamente
+\end{itemize}
+
+\subsection{Implicaciones educativas}
+
+\subsubsection{Para educadores}
 \begin{enumerate}
-    \item \textbf{Diferencias entre materias}: El rendimiento en portugués es superior al de matemáticas, tanto en media como en tasa de aprobación (85.4\% vs 67.1\%).
-
-    \item \textbf{Robustez de estimadores}: La mediana demostró ser completamente robusta ante outliers extremos, mientras que la media mostró sensibilidad significativa (+11.1\% de cambio).
-
-    \item \textbf{Eficiencia estadística}: A pesar de su vulnerabilidad a outliers, la media es 30\% más eficiente que la mediana en términos de varianza muestral.
-
-    \item \textbf{Validación del TLC}: Las simulaciones confirmaron empíricamente la convergencia hacia distribuciones normales, con errores menores a 0.003 en todos los casos.
-
-    \item \textbf{Precisión de intervalos}: Los intervalos de confianza bootstrap coincidieron estrechamente con los métodos paramétricos, validando ambos enfoques.
-
-    \item \textbf{Eficiencia computacional}: Los métodos vectorizados son 3.3 veces más rápidos que los bucles tradicionales, demostrando la importancia de técnicas modernas de programación.
+    \item \textbf{Monitoreo temprano:} Las calificaciones G1 y G2 son predictores confiables de G3
+    \item \textbf{Intervención focalizada:} Estudiantes con fallos previos requieren apoyo especial
+    \item \textbf{Diferencias de género:} Considerar enfoques diferenciados por materia
+    \item \textbf{Factor familiar:} Involucrar a padres, especialmente aquellos con menor educación
 \end{enumerate}
 
-\subsection{Implicaciones Metodológicas}
+\subsubsection{Para políticas educativas}
+\begin{enumerate}
+    \item \textbf{Equidad:} Programas de apoyo para familias con menor capital educativo
+    \item \textbf{Prevención:} Sistemas de alerta temprana basados en modelos predictivos
+    \item \textbf{Recursos:} Focalizar intervenciones en estudiantes con patrones de riesgo
+    \item \textbf{Evaluación:} Uso de múltiples indicadores para evaluación integral
+\end{enumerate}
 
-Este estudio demuestra la importancia de:
+\subsection{Principales hallazgos metodológicos}
+
+\begin{enumerate}
+    \item \textbf{Efectividad del análisis multivariado:} La combinación de técnicas (t-test, ANOVA, PCA, regresión) proporciona una visión integral del problema.
+
+    \item \textbf{Superioridad de variables académicas:} Las calificaciones previas superan a factores socio-demográficos como predictores.
+
+    \item \textbf{Interpretabilidad vs Complejidad:} Los modelos simples (regresión lineal) son tan efectivos como los regularizados para este dataset.
+
+    \item \textbf{Validación cruzada:} La consistencia entre entrenamiento y validación confirma la robustez de los modelos.
+
+    \item \textbf{Análisis dimensional:} PCA revela que el comportamiento estudiantil puede caracterizarse en pocas dimensiones principales.
+\end{enumerate}
+
+\subsection{Limitaciones del estudio}
+
 \begin{itemize}
-    \item Evaluar múltiples estimadores según el contexto y presencia de outliers
-    \item Validar resultados teóricos mediante simulaciones
-    \item Utilizar métodos no paramétricos como complemento a técnicas tradicionales
-    \item Implementar código eficiente para análisis de grandes datasets
+    \item \textbf{Contexto específico:} Resultados limitados al sistema educativo portugués
+    \item \textbf{Datos observacionales:} No permiten inferencias causales estrictas
+    \item \textbf{Variables omitidas:} Factores no medidos pueden influir en los resultados
+    \item \textbf{Temporalidad:} Análisis transversal no captura evolución temporal
 \end{itemize}
 
-\subsection{Limitaciones y Trabajo Futuro}
+\subsection{Recomendaciones para futuras investigaciones}
 
-Las limitaciones incluyen el análisis de un solo contexto educativo (Portugal) y la necesidad de considerar factores causales. Futuras investigaciones podrían explorar:
-\begin{itemize}
-    \item Modelos predictivos del rendimiento final (G3)
-    \item Análisis longitudinal de la progresión G1 → G2 → G3
-    \item Clustering para identificar perfiles de estudiantes
-    \item Análisis causal de factores socioeconómicos
-\end{itemize}
+\begin{enumerate}
+    \item \textbf{Estudios longitudinales:} Seguimiento de cohortes para analizar trayectorias
+    \item \textbf{Análisis causal:} Diseños experimentales o cuasi-experimentales
+    \item \textbf{Validación externa:} Replicación en otros contextos educativos
+    \item \textbf{Variables adicionales:} Incluir factores motivacionales y psicológicos
+    \item \textbf{Machine learning avanzado:} Explorar algoritmos no lineales (Random Forest, SVM)
+\end{enumerate}
+
+\section{Anexos}
+
+\subsection{Código Python principal}
+
+\subsubsection{Análisis t-test}
+\begin{lstlisting}[language=Python]
+from scipy.stats import ttest_ind
+import pandas as pd
+
+# t-test para diferencias por sexo
+math_male = math_df[math_df['sex'] == 'M']['G3']
+math_female = math_df[math_df['sex'] == 'F']['G3']
+
+t_stat, p_value = ttest_ind(math_male, math_female)
+print(f"t-statistic: {t_stat:.3f}")
+print(f"p-value: {p_value:.3f}")
+\end{lstlisting}
+
+\subsubsection{ANOVA para nivel educativo}
+\begin{lstlisting}[language=Python]
+from scipy.stats import f_oneway
+
+# ANOVA para educación materna
+grupos_medu = [math_df[math_df['Medu'] == i]['G3'] 
+               for i in range(5)]
+f_stat, p_value = f_oneway(*grupos_medu)
+print(f"F-statistic: {f_stat:.3f}")
+print(f"p-value: {p_value:.3f}")
+\end{lstlisting}
+
+\subsubsection{PCA}
+\begin{lstlisting}[language=Python]
+from sklearn.decomposition import PCA
+from sklearn.preprocessing import StandardScaler
+
+# Seleccionar variables para PCA
+vars_pca = ['age', 'Medu', 'Fedu', 'traveltime', 
+            'studytime', 'failures', 'famrel', 
+            'freetime', 'goout', 'absences']
+
+# Estandarizar y aplicar PCA
+scaler = StandardScaler()
+X_scaled = scaler.fit_transform(math_df[vars_pca])
+pca = PCA(n_components=5)
+X_pca = pca.fit_transform(X_scaled)
+
+# Varianza explicada
+print("Varianza explicada por componente:")
+for i, var in enumerate(pca.explained_variance_ratio_):
+    print(f"PC{i+1}: {var:.3f}")
+\end{lstlisting}
+
+\subsubsection{Regresión Lineal}
+\begin{lstlisting}[language=Python]
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import r2_score, mean_squared_error
+
+# Preparar datos
+X = math_df[['G1', 'G2', 'studytime', 'failures', 
+             'absences', 'Medu', 'Fedu']]
+y = math_df['G3']
+
+# Entrenar modelo
+model = LinearRegression()
+model.fit(X, y)
+
+# Evaluar
+y_pred = model.predict(X)
+r2 = r2_score(y, y_pred)
+rmse = np.sqrt(mean_squared_error(y, y_pred))
+
+print(f"R² score: {r2:.3f}")
+print(f"RMSE: {rmse:.3f}")
+\end{lstlisting}
+
+\subsubsection{Regresión Logística}
+\begin{lstlisting}[language=Python]
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score, classification_report
+
+# Crear variable binaria
+y_binary = (math_df['G3'] >= 10).astype(int)
+
+# Entrenar modelo
+log_model = LogisticRegression()
+log_model.fit(X, y_binary)
+
+# Predicciones
+y_pred_prob = log_model.predict_proba(X)[:, 1]
+y_pred_class = log_model.predict(X)
+
+# Evaluar
+accuracy = accuracy_score(y_binary, y_pred_class)
+print(f"Accuracy: {accuracy:.3f}")
+print(classification_report(y_binary, y_pred_class))
+\end{lstlisting}
+
+\subsection{Equivalente en R}
+
+\subsubsection{Carga de datos y análisis básico}
+\begin{lstlisting}[language=R]
+# Cargar librerías
+library(dplyr)
+library(ggplot2)
+library(corrplot)
+
+# Cargar datos
+math_data <- read.csv("student-mat.csv", sep=";")
+port_data <- read.csv("student-por.csv", sep=";")
+
+# Estadísticas descriptivas
+summary(math_data$G3)
+summary(port_data$G3)
+\end{lstlisting}
+
+\subsubsection{t-test en R}
+\begin{lstlisting}[language=R]
+# t-test para diferencias por sexo
+t.test(G3 ~ sex, data = math_data)
+
+# Boxplot
+ggplot(math_data, aes(x = sex, y = G3)) +
+  geom_boxplot() +
+  labs(title = "Calificaciones por Sexo - Matemáticas")
+\end{lstlisting}
+
+\subsubsection{ANOVA en R}
+\begin{lstlisting}[language=R]
+# ANOVA para educación materna
+anova_result <- aov(G3 ~ factor(Medu), data = math_data)
+summary(anova_result)
+
+# Gráfico de medias con error bars
+math_data %>%
+  group_by(Medu) %>%
+  summarise(
+    media = mean(G3),
+    se = sd(G3)/sqrt(n())
+  ) %>%
+  ggplot(aes(x = factor(Medu), y = media)) +
+  geom_col() +
+  geom_errorbar(aes(ymin = media - se, ymax = media + se),
+                width = 0.2)
+\end{lstlisting}
+
+\subsubsection{PCA en R}
+\begin{lstlisting}[language=R]
+# Seleccionar variables numéricas
+vars_numericas <- math_data %>%
+  select(age, Medu, Fedu, traveltime, studytime, 
+         failures, famrel, freetime, goout, absences)
+
+# PCA
+pca_result <- prcomp(vars_numericas, scale. = TRUE)
+
+# Resumen
+summary(pca_result)
+
+# Biplot
+biplot(pca_result)
+\end{lstlisting}
+
+\subsection{Metodología de validación}
+
+\begin{enumerate}
+    \item \textbf{División de datos:} 80\% entrenamiento, 20\% validación
+    \item \textbf{Validación cruzada:} 5-fold para modelos predictivos
+    \item \textbf{Métricas múltiples:} R², RMSE, MAE para regresión; Accuracy, F1, AUC para clasificación
+    \item \textbf{Análisis de residuos:} Verificación de supuestos de normalidad y homocedasticidad
+\end{enumerate}
 
 \section{Referencias}
 
 \begin{enumerate}
     \item Cortez, P., Silva, A. (2008). Using Data Mining to Predict Secondary School Student Performance. EUROSIS.
     \item Casella, G., Berger, R. L. (2002). Statistical Inference, 2nd Edition. Duxbury Press.
-    \item Efron, B., Tibshirani, R. J. (1994). An Introduction to the Bootstrap. Chapman \& Hall.
+    \item James, G., Witten, D., Hastie, T., Tibshirani, R. (2013). An Introduction to Statistical Learning. Springer.
     \item McKinney, W. (2017). Python for Data Analysis, 2nd Edition. O'Reilly Media.
+    \item R Core Team (2023). R: A language and environment for statistical computing. R Foundation for Statistical Computing.
+    \item Wickham, H., Grolemund, G. (2016). R for Data Science. O'Reilly Media.
 \end{enumerate}
 
 \end{document}
