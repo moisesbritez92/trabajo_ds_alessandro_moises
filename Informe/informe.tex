@@ -1,0 +1,252 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{listings}
+\usepackage{xcolor}
+
+% Configuración de listings para código Python
+\lstset{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue},
+    commentstyle=\color{gray},
+    stringstyle=\color{red},
+    breaklines=true,
+    frame=single,
+    showstringspaces=false
+}
+
+\title{Análisis Estadístico Avanzado del Rendimiento Estudiantil: \\
+Aplicación de Inferencia Estadística y Manipulación de Datos}
+\author{Alessandro Moises Britez}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Este informe presenta un análisis estadístico completo del dataset de rendimiento estudiantil en matemáticas y portugués. Se aplicaron técnicas avanzadas de inferencia estadística incluyendo análisis de estimadores, demostración del Teorema del Límite Central, cálculo de intervalos de confianza, y manipulación eficiente de datos. Los resultados muestran que las calificaciones promedio en matemáticas (10.42 ± 4.58) y portugués (11.91 ± 3.93) difieren significativamente, con mayor variabilidad en matemáticas. Se demostró empíricamente la robustez de diferentes estimadores y la convergencia hacia distribuciones normales mediante simulaciones de bootstrap. El análisis confirma la eficiencia superior de pandas sobre métodos tradicionales de bucles para manipulación de datos.
+\end{abstract}
+
+\section{Introducción}
+
+El rendimiento académico estudiantil es un tema de gran interés en el ámbito educativo, siendo fundamental comprender los factores que influyen en el éxito o fracaso escolar. Este trabajo presenta un análisis estadístico exhaustivo de un dataset que contiene información sobre el rendimiento de estudiantes portugueses en matemáticas y lengua portuguesa.
+
+El objetivo principal de este estudio es aplicar técnicas avanzadas de inferencia estadística para analizar el rendimiento estudiantil, comparando diferentes estimadores estadísticos, demostrando propiedades fundamentales como el Teorema del Límite Central, y calculando intervalos de confianza para parámetros poblacionales. Adicionalmente, se evalúan técnicas eficientes de manipulación de datos, comparando metodologías tradicionales con enfoques modernos.
+
+\subsection{Dataset}
+El dataset utilizado proviene del repositorio UCI Machine Learning Repository y contiene información de 395 estudiantes de matemáticas y 649 estudiantes de portugués de dos escuelas secundarias portuguesas. Las variables incluyen calificaciones de tres períodos (G1, G2, G3), características demográficas, socioeconómicas y del entorno educativo.
+
+\section{Metodología}
+
+\subsection{Técnicas de Inferencia Estadística}
+
+Para este análisis se implementaron múltiples técnicas estadísticas avanzadas:
+
+\subsubsection{Análisis de Estimadores}
+Se comparó la robustez y eficiencia de diferentes estimadores de tendencia central:
+\begin{itemize}
+    \item \textbf{Media aritmética}: $\bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i$
+    \item \textbf{Mediana}: valor que divide la distribución en dos partes iguales
+    \item \textbf{Desviación Absoluta Mediana (MAD)}: $MAD = \text{median}(|x_i - \text{median}(x)|)$
+\end{itemize}
+
+\subsubsection{Teorema del Límite Central}
+Se realizaron simulaciones con diferentes tamaños de muestra ($n = 5, 10, 20, 50$) para demostrar que:
+\[\frac{\bar{X}_n - \mu}{\sigma/\sqrt{n}} \xrightarrow{d} N(0,1) \text{ cuando } n \to \infty\]
+
+\subsubsection{Intervalos de Confianza}
+Se calcularon intervalos de confianza del 95\% para:
+
+\paragraph{Media poblacional:}
+\[IC_{1-\alpha}(\mu) = \bar{x} \pm t_{\alpha/2,n-1} \cdot \frac{s}{\sqrt{n}}\]
+
+\paragraph{Varianza poblacional:}
+\[IC_{1-\alpha}(\sigma^2) = \left[\frac{(n-1)s^2}{\chi^2_{\alpha/2,n-1}}, \frac{(n-1)s^2}{\chi^2_{1-\alpha/2,n-1}}\right]\]
+
+\subsection{Bootstrap No Paramétrico}
+Para validar los resultados teóricos, se implementó bootstrap con 10,000 remuestras para obtener intervalos de confianza empíricos y comparar con los métodos paramétricos tradicionales.
+
+\subsection{Manipulación de Datos}
+Se compararon dos enfoques para el análisis de datos:
+\begin{itemize}
+    \item \textbf{Método tradicional}: bucles iterativos (ineficiente)
+    \item \textbf{Método moderno}: pandas/numpy vectorizado (eficiente)
+\end{itemize}
+
+\section{Resultados}
+
+\subsection{Estadísticas Descriptivas}
+
+Los resultados del análisis descriptivo muestran diferencias notables entre ambas materias:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lcc}
+\toprule
+\textbf{Estadística} & \textbf{Matemáticas} & \textbf{Portugués} \\
+\midrule
+Número de estudiantes & 395 & 649 \\
+Media (G3) & 10.42 & 11.91 \\
+Desviación estándar & 4.58 & 3.93 \\
+Rango & 0--20 & 0--20 \\
+Tasa de aprobación (\%) & 67.1 & 85.4 \\
+\bottomrule
+\end{tabular}
+\caption{Estadísticas descriptivas por materia}
+\label{tab:descriptivas}
+\end{table}
+
+\subsection{Análisis de Estimadores}
+
+El análisis de robustez reveló diferencias significativas entre estimadores:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lcc}
+\toprule
+\textbf{Estimador} & \textbf{Valor Original} & \textbf{Con Outlier} \\
+\midrule
+Media & 10.415 & 11.570 (+11.1\%) \\
+Mediana & 11.000 & 11.000 (+0.0\%) \\
+MAD & 4.448 & 4.448 (+0.0\%) \\
+\bottomrule
+\end{tabular}
+\caption{Robustez de estimadores ante outliers (Matemáticas)}
+\label{tab:robustez}
+\end{table}
+
+\subsection{Eficiencia de Estimadores}
+
+La comparación mediante bootstrap (1000 simulaciones) mostró:
+\begin{itemize}
+    \item \textbf{Varianza de medias bootstrap}: 0.1058
+    \item \textbf{Varianza de medianas bootstrap}: 0.1377
+    \item \textbf{Eficiencia relativa}: 1.301 (la media es 30\% más eficiente)
+\end{itemize}
+
+\subsection{Teorema del Límite Central}
+
+Las simulaciones confirmaron la convergencia hacia distribuciones normales:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lccc}
+\toprule
+\textbf{Tamaño muestra} & \textbf{Error estándar teórico} & \textbf{Error estándar observado} & \textbf{Error} \\
+\midrule
+n = 5 & 2.048 & 2.051 & 0.003 \\
+n = 10 & 1.449 & 1.447 & 0.002 \\
+n = 20 & 1.025 & 1.023 & 0.002 \\
+n = 50 & 0.648 & 0.647 & 0.001 \\
+\bottomrule
+\end{tabular}
+\caption{Convergencia del error estándar (Teorema del Límite Central)}
+\label{tab:tlc}
+\end{table}
+
+\subsection{Intervalos de Confianza (95\%)}
+
+\subsubsection{Matemáticas}
+\begin{itemize}
+    \item \textbf{IC Media}: (9.9621, 10.8686)
+    \item \textbf{IC Varianza}: (18.4037, 23.7893)
+    \item \textbf{IC Bootstrap Media}: (9.9547, 10.8725)
+\end{itemize}
+
+\subsubsection{Portugués}
+\begin{itemize}
+    \item \textbf{IC Media}: (11.6066, 12.2089)
+    \item \textbf{IC Varianza}: (14.2847, 16.8456)
+    \item \textbf{IC Bootstrap Media}: (11.6043, 12.2112)
+\end{itemize}
+
+La amplitud del IC para la media es menor en portugués (0.6023) que en matemáticas (0.9065), indicando mayor precisión en la estimación para portugués.
+
+\subsection{Eficiencia Computacional}
+
+La comparación de métodos de manipulación de datos mostró diferencias dramáticas:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lcc}
+\toprule
+\textbf{Método} & \textbf{Tiempo (ms)} & \textbf{Mejora} \\
+\midrule
+Loop tradicional & 3.21 & - \\
+Pandas vectorizado & 0.98 & 3.3x más rápido \\
+\bottomrule
+\end{tabular}
+\caption{Comparación de eficiencia computacional}
+\label{tab:eficiencia}
+\end{table}
+
+\subsection{Análisis de Variables Derivadas}
+
+Se crearon nuevas variables para análisis más profundo:
+\begin{itemize}
+    \item \textbf{Progreso}: Diferencia G3--G1 (media: 0.29)
+    \item \textbf{Balance tiempo}: Studytime--Freetime
+    \item \textbf{Rendimiento categorizado}: Bajo/Medio/Alto basado en G3
+\end{itemize}
+
+\section{Conclusiones}
+
+\subsection{Principales Hallazgos}
+
+\begin{enumerate}
+    \item \textbf{Diferencias entre materias}: El rendimiento en portugués es superior al de matemáticas, tanto en media como en tasa de aprobación (85.4\% vs 67.1\%).
+
+    \item \textbf{Robustez de estimadores}: La mediana demostró ser completamente robusta ante outliers extremos, mientras que la media mostró sensibilidad significativa (+11.1\% de cambio).
+
+    \item \textbf{Eficiencia estadística}: A pesar de su vulnerabilidad a outliers, la media es 30\% más eficiente que la mediana en términos de varianza muestral.
+
+    \item \textbf{Validación del TLC}: Las simulaciones confirmaron empíricamente la convergencia hacia distribuciones normales, con errores menores a 0.003 en todos los casos.
+
+    \item \textbf{Precisión de intervalos}: Los intervalos de confianza bootstrap coincidieron estrechamente con los métodos paramétricos, validando ambos enfoques.
+
+    \item \textbf{Eficiencia computacional}: Los métodos vectorizados son 3.3 veces más rápidos que los bucles tradicionales, demostrando la importancia de técnicas modernas de programación.
+\end{enumerate}
+
+\subsection{Implicaciones Metodológicas}
+
+Este estudio demuestra la importancia de:
+\begin{itemize}
+    \item Evaluar múltiples estimadores según el contexto y presencia de outliers
+    \item Validar resultados teóricos mediante simulaciones
+    \item Utilizar métodos no paramétricos como complemento a técnicas tradicionales
+    \item Implementar código eficiente para análisis de grandes datasets
+\end{itemize}
+
+\subsection{Limitaciones y Trabajo Futuro}
+
+Las limitaciones incluyen el análisis de un solo contexto educativo (Portugal) y la necesidad de considerar factores causales. Futuras investigaciones podrían explorar:
+\begin{itemize}
+    \item Modelos predictivos del rendimiento final (G3)
+    \item Análisis longitudinal de la progresión G1 → G2 → G3
+    \item Clustering para identificar perfiles de estudiantes
+    \item Análisis causal de factores socioeconómicos
+\end{itemize}
+
+\section{Referencias}
+
+\begin{enumerate}
+    \item Cortez, P., Silva, A. (2008). Using Data Mining to Predict Secondary School Student Performance. EUROSIS.
+    \item Casella, G., Berger, R. L. (2002). Statistical Inference, 2nd Edition. Duxbury Press.
+    \item Efron, B., Tibshirani, R. J. (1994). An Introduction to the Bootstrap. Chapman \& Hall.
+    \item McKinney, W. (2017). Python for Data Analysis, 2nd Edition. O'Reilly Media.
+\end{enumerate}
+
+\end{document}
