@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.5.5)  29 SEP 2025 07:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.5.5)  29 SEP 2025 08:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -436,6 +436,10 @@ File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 ) (informe.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
+
+
+LaTeX Warning: Label `tab:descriptivas' multiply defined.
+
 )
 \openout1 = `informe.aux'.
 
@@ -545,19 +549,444 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 [1
 
 {C:/Users/moise/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
+Overfull \hbox (3.51344pt too wide) in paragraph at lines 83--84
+[]\OT1/cmr/bx/n/12 Variables: \OT1/cmr/m/n/12 fam-si-ze, tra-vel-ti-me, study-t
+i-me, fai-lu-res, ab-sen-ces, fam-rel, free-ti-me, goout,
+ []
+
+
+! LaTeX Error: Unicode character ≥ (U+2265)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.98 ...redecir si un estudiante aprobará (G3 ≥
+                                                   10) o suspenderá (G3 < 10)?
+
+? 
+
 
 [2]
-Overfull \hbox (5.1464pt too wide) in paragraph at lines 146--156
+<datos1.png, id=278, 1084.05pt x 722.7pt>
+File: datos1.png Graphic file (type png)
+<use datos1.png>
+Package pdftex.def Info: datos1.png  used on input line 140.
+(pdftex.def)             Requested size: 455.24411pt x 303.49884pt.
+
+
+[3]
+
+[4 <./datos1.png>]
+
+! LaTeX Error: Unicode character α (U+03B1)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.168 ...onclusión:} Diferencia significativa (α
+                                                   = 0.05)
+? 
+! Misplaced \noalign.
+\midrule ->\noalign 
+                    {\ifnum 0=`}\fi \@aboverulesep =\aboverulesep \global \@...
+l.205 \midrule
+              
+? 
+! Misplaced alignment tab character &.
+l.206 Número de estudiantes &
+                               395 & 649 \\
+? 
+! Misplaced alignment tab character &.
+l.206 Número de estudiantes & 395 &
+                                     649 \\
+? 
+! Misplaced alignment tab character &.
+l.207 Media (G3) &
+                   10.42 & 11.91 \\
+? 
+! Misplaced alignment tab character &.
+l.207 Media (G3) & 10.42 &
+                           11.91 \\
+? 
+! Misplaced alignment tab character &.
+l.208 Desviación estándar &
+                              4.58 & 3.93 \\
+? 
+! Misplaced alignment tab character &.
+l.208 Desviación estándar & 4.58 &
+                                     3.93 \\
+? 
+! Misplaced alignment tab character &.
+l.209 Rango &
+              0--20 & 0--20 \\
+? 
+! Misplaced alignment tab character &.
+l.209 Rango & 0--20 &
+                      0--20 \\
+? 
+! Misplaced alignment tab character &.
+l.210 Tasa de aprobación (\%) &
+                                 67.1 & 85.4 \\
+? 
+! Misplaced alignment tab character &.
+l.210 Tasa de aprobación (\%) & 67.1 &
+                                        85.4 \\
+? 
+! Misplaced \noalign.
+\bottomrule ->\noalign 
+                       {\ifnum 0=`}\fi \@aboverulesep =\aboverulesep \global...
+l.211 \bottomrule
+                 
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 206--212
+
+ []
+
+! Misplaced \crcr.
+\endtabular ->\crcr 
+                    \egroup \egroup $\egroup 
+l.212 \end{tabular}
+                   
+? 
+! Too many }'s.
+\endtabular ->\crcr \egroup 
+                            \egroup $\egroup 
+l.212 \end{tabular}
+                   
+? 
+! Too many }'s.
+\endtabular ->\crcr \egroup \egroup 
+                                    $\egroup 
+l.212 \end{tabular}
+                   
+? 
+! Extra }, or forgotten $.
+<recently read> \egroup 
+                        
+l.212 \end{tabular}
+                   
+? 
+
+! LaTeX Error: \begin{document} ended by \end{tabular}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.212 \end{tabular}
+                   
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.212 \end{tabular}
+                   
+? 
+! Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.212 \end{tabular}
+                   
+? 
+
+! Package caption Error: \caption outside float.
+
+See the caption package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.213 \caption
+              {Estadísticas descriptivas por materia}
+? 
+! Too many }'s.
+\@endfloatbox ...pagefalse \outer@nobreak \egroup 
+                                                  \color@endbox 
+l.215 \end{table}
+                 
+? 
+! Extra \endgroup.
+\color@endgroup ->\endgraf \endgroup 
+                                     
+l.215 \end{table}
+                 
+? 
+! Too many }'s.
+\color@endbox ->\color@endgroup \egroup 
+                                        
+l.215 \end{table}
+                 
+? 
+
+! LaTeX Error: \begin{document} ended by \end{table}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.215 \end{table}
+                 
+? 
+! Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.215 \end{table}
+                 
+? 
+
+
+[5]
+Overfull \hbox (53.0683pt too wide) in paragraph at lines 234--245
  [][] 
  []
 
 
 
-[3]
+[6]
 
-[4]
+! LaTeX Error: Unicode character α (U+03B1)
+               not set up for use with LaTeX.
 
-[5] (informe.aux
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.321 Ridge (α
+               =0.1) & 0.829 & 1.91 & 15 \\
+? 
+
+! LaTeX Error: Unicode character α (U+03B1)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.322 Lasso (α
+               =0.01) & 0.827 & 1.93 & 12 \\
+? 
+
+! LaTeX Error: Unicode character ≥ (U+2265)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.333     \item \textbf{Aprobar:} G3 ≥
+                                         10 (1)
+? 
+
+
+[7]
+
+[8]
+
+! LaTeX Error: Unicode character β (U+03B2)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.415     \item G2 es el predictor más fuerte (β
+                                                   = 0.976), seguido de G1
+? 
+
+
+[9]
+
+[10]
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.504 # ANOVA para educación 
+                              materna
+? 
+
+! LaTeX Error: Invalid UTF-8 byte "B3.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.504 # ANOVA para educación 
+                              materna
+? 
+
+
+[11]
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.553 print(f"R² 
+                  score: {r2:.3f}")
+? 
+
+! LaTeX Error: Invalid UTF-8 byte "B2.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.553 print(f"R² 
+                  score: {r2:.3f}")
+? 
+
+
+[12]
+(C:\Users\moise\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+File: lstlang1.sty 2024/05/25 1.10b listings language file
+)
+(C:\Users\moise\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang2.sty
+File: lstlang2.sty 2024/05/25 1.10b listings language file
+)
+(C:\Users\moise\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang3.sty
+File: lstlang3.sty 2024/05/25 1.10b listings language file
+)
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.583 # Cargar librerías
+                         
+? 
+
+! LaTeX Error: Invalid UTF-8 byte "AD.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.583 # Cargar librerías
+                         
+? 
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.592 # Estadísticas 
+                      descriptivas
+? 
+
+! LaTeX Error: Invalid UTF-8 byte "AD.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.592 # Estadísticas 
+                      descriptivas
+? 
+LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 
+593.
+(C:\Users\moise\AppData\Local\Programs\MiKTeX\tex/latex/base\ts1cmtt.fd
+File: ts1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+)
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.605 ... "Calificaciones por Sexo - Matemáticas"
+                                                  )
+? 
+
+! LaTeX Error: Invalid UTF-8 byte "A1.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.605 ... "Calificaciones por Sexo - Matemáticas"
+                                                  )
+? 
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.610 # ANOVA para educación 
+                              materna
+? 
+
+! LaTeX Error: Invalid UTF-8 byte "B3.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.610 # ANOVA para educación 
+                              materna
+? 
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.614 # Gráfico 
+                 de medias con error bars
+? 
+
+! LaTeX Error: Invalid UTF-8 byte "A1.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.614 # Gráfico 
+                 de medias con error bars
+? 
+
+
+[13]
+
+! LaTeX Error: Invalid UTF-8 byte sequence (�\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.629 # Seleccionar variables numéricas
+                                        
+? 
+
+! LaTeX Error: Invalid UTF-8 byte "A9.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.629 # Seleccionar variables numéricas
+                                        
+? 
+
+
+[14] (informe.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
 )
@@ -565,35 +994,40 @@ LaTeX Info: Redefining \% on input line 11.
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-08-30>
  ***********
+
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `informe.out' has not changed.
-(rerunfilecheck)             Checksum: AB6F888A3CE455A41F5120B2A28BBB41;3989.
+(rerunfilecheck)             Checksum: 2508DCD60E3371E2059737CD8D79E5A6;12521.
  ) 
 Here is how much of TeX's memory you used:
- 15090 strings out of 473899
- 239025 string characters out of 5726501
- 838456 words of memory out of 5000000
- 37742 multiletter control sequences out of 15000+600000
- 568118 words of font info for 74 fonts, out of 8000000 for 9000
+ 16530 strings out of 473899
+ 255568 string characters out of 5726501
+ 1078456 words of memory out of 5000000
+ 38969 multiletter control sequences out of 15000+600000
+ 570342 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,11n,79p,836b,549s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\moise\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
-1200.pk> <C:\Users\moise\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
-0\tcrm1095.pk><C:/Users/moise/AppData/Local/Programs/MiKTeX/fonts/type1/public/
-amsfonts/cm/cmbx10.pfb><C:/Users/moise/AppData/Local/Programs/MiKTeX/fonts/type
-1/public/amsfonts/cm/cmbx12.pfb><C:/Users/moise/AppData/Local/Programs/MiKTeX/f
-onts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/moise/AppData/Local/Programs
-/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/moise/AppData/Local
-/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/moise/AppDa
-ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/moi
-se/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/U
-sers/moise/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.p
-fb><C:/Users/moise/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm
-/cmr8.pfb><C:/Users/moise/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
-onts/cm/cmsy10.pfb><C:/Users/moise/AppData/Local/Programs/MiKTeX/fonts/type1/pu
-blic/amsfonts/cm/cmsy8.pfb>
-Output written on informe.pdf (5 pages, 170974 bytes).
+ 75i,9n,79p,836b,2073s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\moise\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tctt
+1095.pk> <C:\Users\moise\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
+0\tcbx1200.pk> <C:\Users\moise\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
+/dpi600\tcrm1200.pk> <C:\Users\moise\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
+pen/ec/dpi600\tcrm1095.pk><C:/Users/moise/AppData/Local/Programs/MiKTeX/fonts/t
+ype1/public/amsfonts/cm/cmbx10.pfb><C:/Users/moise/AppData/Local/Programs/MiKTe
+X/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/moise/AppData/Local/Progr
+ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/moise/AppData/Lo
+cal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/moise/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/
+moise/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C
+:/Users/moise/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr1
+7.pfb><C:/Users/moise/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
+/cm/cmr8.pfb><C:/Users/moise/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
+msfonts/cm/cmsy10.pfb><C:/Users/moise/AppData/Local/Programs/MiKTeX/fonts/type1
+/public/amsfonts/cm/cmtt10.pfb>
+Output written on informe.pdf (14 pages, 305085 bytes).
 PDF statistics:
- 215 PDF objects out of 1000 (max. 8388607)
- 46 named destinations out of 1000 (max. 500000)
- 193 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 613 PDF objects out of 1000 (max. 8388607)
+ 244 named destinations out of 1000 (max. 500000)
+ 518 words of extra memory for PDF output out of 10000 (max. 10000000)
 
