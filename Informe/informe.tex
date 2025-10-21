@@ -29,7 +29,7 @@
 
 \title{Análisis Estadístico Avanzado del Rendimiento Estudiantil: \\
 Aplicación de Inferencia Estadística y Manipulación de Datos}
-\author{Alessandro Moises Britez}
+\author{Alessandro Flammia y Moises Britez}
 \date{\today}
 
 \begin{document}
@@ -58,7 +58,7 @@ Los datos representan una oportunidad única para entender cómo factores socio-
 
 En este análisis abordaremos \textbf{5 preguntas clave} que nos permitirán entender mejor los factores que influyen en el rendimiento académico:
 
-\subsection{1. Diferencia de medias (t-test)}
+\subsection{Diferencia de medias (t-test)}
 \textbf{Pregunta:} ¿Existen diferencias significativas en las notas finales (G3) entre hombres y mujeres?
 
 \begin{itemize}
@@ -67,7 +67,7 @@ En este análisis abordaremos \textbf{5 preguntas clave} que nos permitirán ent
     \item \textbf{Método:} t-test de dos muestras independientes, boxplot para visualización
 \end{itemize}
 
-\subsection{2. ANOVA (Análisis de varianza)}
+\subsection{ANOVA (Análisis de varianza)}
 \textbf{Pregunta:} ¿El rendimiento académico (G3) difiere según el nivel educativo de la madre (Medu)?
 
 \begin{itemize}
@@ -76,7 +76,7 @@ En este análisis abordaremos \textbf{5 preguntas clave} que nos permitirán ent
     \item \textbf{Método:} ANOVA de una vía, gráfico de medias por grupo con barras de error
 \end{itemize}
 
-\subsection{3. PCA (Análisis de Componentes Principales)}
+\subsection{PCA (Análisis de Componentes Principales)}
 \textbf{Pregunta:} ¿Podemos reducir las múltiples variables socio-familiares a 2-3 componentes principales que resuman el perfil del estudiante?
 
 \begin{itemize}
@@ -85,7 +85,7 @@ En este análisis abordaremos \textbf{5 preguntas clave} que nos permitirán ent
     \item \textbf{Meta:} Interpretar qué variables explican más la variabilidad en los datos
 \end{itemize}
 
-\subsection{4. Regresión Lineal (Predicción)}
+\subsection{Regresión Lineal (Predicción)}
 \textbf{Pregunta:} ¿Qué factores explican mejor la nota final (G3)?
 
 \begin{itemize}
@@ -94,7 +94,7 @@ En este análisis abordaremos \textbf{5 preguntas clave} que nos permitirán ent
     \item \textbf{Métodos:} Regresión lineal múltiple, comparación con regularización (Ridge/Lasso)
 \end{itemize}
 
-\subsection{5. Regresión Logística (Clasificación)}
+\subsection{Regresión Logística (Clasificación)}
 \textbf{Pregunta:} ¿Podemos predecir si un estudiante aprobará (G3 ≥ 10) o suspenderá (G3 < 10)?
 
 \begin{itemize}
@@ -141,6 +141,17 @@ El análisis visual de las distribuciones revela:
         \caption{Histograma Matemáticas}
         \label{fig:hist_math}
 \end{figure}
+
+\subsection{Matriz de correlación}
+
+El análisis de correlaciones entre variables numéricas revela patrones importantes en los datos de matemáticas:
+
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=0.6\linewidth]{corr_math.png}
+        \caption{Matriz de correlación de variables - Matemáticas}
+        \label{fig:corr_math}
+\end{figure}
 \subsection{Limpieza de datos}
 
 \subsubsection{Valores faltantes (NAs)}
@@ -153,6 +164,43 @@ El análisis de completitud mostró:
 
 \subsubsection{Detección de outliers}
 Se identificaron outliers mediante análisis de robustez de estimadores, mostrando que la mediana es completamente robusta ante valores extremos mientras que la media presenta sensibilidad significativa.
+
+\subsection{Análisis de factores académicos}
+
+\subsubsection{Tiempo de estudio y rendimiento}
+
+El análisis del tiempo de estudio semanal y su relación con las calificaciones finales muestra tendencias claras:
+
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=\linewidth]{studytime_calificaciones.png}
+        \caption{Relación entre tiempo de estudio y calificaciones finales}
+        \label{fig:studytime}
+\end{figure}
+
+Se observa una tendencia positiva: los estudiantes que dedican más horas de estudio obtienen mejores calificaciones, especialmente en la categoría de más de 5 horas semanales.
+
+\subsubsection{Ausencias y rendimiento académico}
+
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=\linewidth]{ausencias_calificaciones.png}
+        \caption{Impacto de las ausencias en las calificaciones finales}
+        \label{fig:ausencias}
+\end{figure}
+
+La correlación negativa entre ausencias y rendimiento es evidente en ambas materias, con líneas de tendencia que confirman que mayor número de ausencias se asocia con calificaciones más bajas.
+
+\subsubsection{Evolución de calificaciones durante el año académico}
+
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=\linewidth]{evolucion_calificaciones.png}
+        \caption{Evolución de calificaciones en los tres períodos (G1, G2, G3)}
+        \label{fig:evolucion}
+\end{figure}
+
+El análisis longitudinal muestra estabilización progresiva de las calificaciones, con reducción de variabilidad hacia el final del año académico.
 
 \section{Estadística Inferencial}
 
@@ -175,6 +223,13 @@ El análisis de diferencias de medias entre géneros reveló:
     \item \textbf{t-statistic:} -1.21, p-value = 0.227
     \item \textbf{Conclusión:} No hay diferencia significativa
 \end{itemize}
+
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=\linewidth]{ttest_genero.png}
+        \caption{Análisis T-test: Distribución de calificaciones por género}
+        \label{fig:ttest_genero}
+\end{figure}
 
 \subsection{ANOVA: Educación de los padres}
 
@@ -202,17 +257,20 @@ El análisis ANOVA para el nivel educativo de la madre (Medu) mostró:
     \item \textbf{Conclusión:} Diferencias significativas entre grupos
     \item \textbf{Tendencia:} Mayor nivel educativo materno → mejor rendimiento
 \end{itemize}
-\midrule
-Número de estudiantes & 395 & 649 \\
-Media (G3) & 10.42 & 11.91 \\
-Desviación estándar & 4.58 & 3.93 \\
-Rango & 0--20 & 0--20 \\
-Tasa de aprobación (\%) & 67.1 & 85.4 \\
-\bottomrule
-\end{tabular}
-\caption{Estadísticas descriptivas por materia}
-\label{tab:descriptivas}
-\end{table}
+
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=\linewidth]{anova_educacion_madre.png}
+        \caption{Análisis ANOVA: Calificaciones según nivel educativo de la madre}
+        \label{fig:anova_medu}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=\linewidth]{educacion_padres_calificaciones.png}
+        \caption{Efecto del nivel educativo de ambos padres en las calificaciones}
+        \label{fig:educacion_padres}
+\end{figure}
 
 \section{PCA (Análisis de Componentes Principales)}
 
@@ -255,6 +313,13 @@ La visualización de estudiantes en el espacio de componentes principales mostr�
     \item \textbf{PC1:} Correlacionado fuertemente con Medu, Fedu y studytime
     \item \textbf{PC2:} Asociado con goout, freetime y absences (negativo)
 \end{itemize}
+
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=\linewidth]{pca_analisis.png}
+        \caption{Análisis de Componentes Principales: Visualización de estudiantes en espacio PC1-PC2}
+        \label{fig:pca_analisis}
+\end{figure}
 
 \subsection{Interpretación de componentes}
 
@@ -325,6 +390,20 @@ Lasso (α=0.01) & 0.827 & 1.93 & 12 \\
 \caption{Comparación de modelos de regresión}
 \label{tab:reg_comparacion}
 \end{table}
+
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=\linewidth]{regresion_lineal_matemáticas.png}
+        \caption{Análisis de regresión lineal para Matemáticas: comparación de modelos y variables importantes}
+        \label{fig:reg_lineal_math}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=\linewidth]{regresion_lineal_portugués.png}
+        \caption{Análisis de regresión lineal para Portugués: comparación de modelos y variables importantes}
+        \label{fig:reg_lineal_port}
+\end{figure}
 
 \subsection{Regresión Logística: Predicción de aprobación}
 
@@ -428,23 +507,8 @@ AUC-ROC & 0.924 & 0.901 \\
     \item \textbf{Implicación:} Es posible identificar estudiantes en riesgo tempranamente
 \end{itemize}
 
-\subsection{Implicaciones educativas}
 
-\subsubsection{Para educadores}
-\begin{enumerate}
-    \item \textbf{Monitoreo temprano:} Las calificaciones G1 y G2 son predictores confiables de G3
-    \item \textbf{Intervención focalizada:} Estudiantes con fallos previos requieren apoyo especial
-    \item \textbf{Diferencias de género:} Considerar enfoques diferenciados por materia
-    \item \textbf{Factor familiar:} Involucrar a padres, especialmente aquellos con menor educación
-\end{enumerate}
 
-\subsubsection{Para políticas educativas}
-\begin{enumerate}
-    \item \textbf{Equidad:} Programas de apoyo para familias con menor capital educativo
-    \item \textbf{Prevención:} Sistemas de alerta temprana basados en modelos predictivos
-    \item \textbf{Recursos:} Focalizar intervenciones en estudiantes con patrones de riesgo
-    \item \textbf{Evaluación:} Uso de múltiples indicadores para evaluación integral
-\end{enumerate}
 
 \subsection{Principales hallazgos metodológicos}
 
@@ -460,27 +524,19 @@ AUC-ROC & 0.924 & 0.901 \\
     \item \textbf{Análisis dimensional:} PCA revela que el comportamiento estudiantil puede caracterizarse en pocas dimensiones principales.
 \end{enumerate}
 
-\subsection{Limitaciones del estudio}
 
-\begin{itemize}
-    \item \textbf{Contexto específico:} Resultados limitados al sistema educativo portugués
-    \item \textbf{Datos observacionales:} No permiten inferencias causales estrictas
-    \item \textbf{Variables omitidas:} Factores no medidos pueden influir en los resultados
-    \item \textbf{Temporalidad:} Análisis transversal no captura evolución temporal
-\end{itemize}
-
-\subsection{Recomendaciones para futuras investigaciones}
-
-\begin{enumerate}
-    \item \textbf{Estudios longitudinales:} Seguimiento de cohortes para analizar trayectorias
-    \item \textbf{Análisis causal:} Diseños experimentales o cuasi-experimentales
-    \item \textbf{Validación externa:} Replicación en otros contextos educativos
-    \item \textbf{Variables adicionales:} Incluir factores motivacionales y psicológicos
-    \item \textbf{Machine learning avanzado:} Explorar algoritmos no lineales (Random Forest, SVM)
-\end{enumerate}
 
 \section{Anexos}
+\subsection{Repositorio y control de versiones}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{pushs.png}
+    \caption{Trabajo en el repositorio}
+    \label{fig:pushs}
+\end{figure}
+
+Para mas información, el código completo y los datos están disponibles en el siguiente repositorio de GitHub: \url{https://github.com/moisesbritez92/trabajo_ds_alessandro_moises.git}
 \subsection{Código Python principal}
 
 \subsubsection{Análisis t-test}
@@ -653,6 +709,8 @@ biplot(pca_result)
 \section{Referencias}
 
 \begin{enumerate}
+    \item Anthropic (2024). Claude AI Assistant. https://www.anthropic.com
+        \item GitHub (2024). GitHub Copilot: Your AI pair programmer. https://github.com/features/copilot
     \item Cortez, P., Silva, A. (2008). Using Data Mining to Predict Secondary School Student Performance. EUROSIS.
     \item Casella, G., Berger, R. L. (2002). Statistical Inference, 2nd Edition. Duxbury Press.
     \item James, G., Witten, D., Hastie, T., Tibshirani, R. (2013). An Introduction to Statistical Learning. Springer.
