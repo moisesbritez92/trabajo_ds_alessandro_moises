@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.15)  21 OCT 2025 17:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.15)  23 OCT 2025 12:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -368,6 +368,9 @@ Package caption Info: New subtype `subfigure' on input line 239.
 Package caption Info: New subtype `subtable' on input line 239.
 \c@subtable=\count296
 )
+(/usr/local/texlive/2023/texmf-dist/tex/latex/listingsutf8/listingsutf8.sty
+Package: listingsutf8 2019-12-10 v1.5 Allow UTF-8 in listings input (HO)
+
 (/usr/local/texlive/2023/texmf-dist/tex/latex/listings/listings.sty
 \lst@mode=\count297
 \lst@gtempboxa=\box55
@@ -393,6 +396,10 @@ File: listings.cfg 2023/02/27 1.9 listings configuration
 ))
 Package: listings 2023/02/27 1.9 (Carsten Heinz)
 
+(/usr/local/texlive/2023/texmf-dist/tex/generic/stringenc/stringenc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
+)
+))
 (/usr/local/texlive/2023/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
 
@@ -426,26 +433,26 @@ LaTeX Info: Redefining \% on input line 22.
 )
 \openout1 = `informe.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Info: Redefining \. on input line 35.
-LaTeX Info: Redefining \% on input line 35.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Info: Redefining \. on input line 40.
+LaTeX Info: Redefining \% on input line 40.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -503,7 +510,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring OFF on input line 35.
+Package hyperref Info: Link coloring OFF on input line 40.
 
 (./informe.out) (./informe.out)
 \@outlinefile=\write3
@@ -513,13 +520,13 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count312
-LaTeX Font Info:    Trying to load font information for U+msa on input line 38.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 43.
 
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 38.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 43.
 
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -528,205 +535,92 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 {/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/loc
 al/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-Overfull \hbox (3.51344pt too wide) in paragraph at lines 83--84
+Overfull \hbox (3.51344pt too wide) in paragraph at lines 88--89
 []\OT1/cmr/bx/n/12 Variables: \OT1/cmr/m/n/12 fam-si-ze, tra-vel-ti-me, study-t
 i-me, fai-lu-res, ab-sen-ces, fam-rel, free-ti-me, goout,
  []
 
-
-! LaTeX Error: Unicode character ≥ (U+2265)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.98 ...redecir si un estudiante aprobará (G3 ≥
-                                                   10) o suspenderá (G3 < 10)?
-
-? 
 [2]
 <datos1.png, id=284, 1084.05pt x 722.7pt>
 File: datos1.png Graphic file (type png)
 <use datos1.png>
-Package pdftex.def Info: datos1.png  used on input line 140.
+Package pdftex.def Info: datos1.png  used on input line 145.
 (pdftex.def)             Requested size: 455.24411pt x 303.49884pt.
  [3]
 <corr_math.png, id=291, 867.24pt x 722.7pt>
 File: corr_math.png Graphic file (type png)
 <use corr_math.png>
-Package pdftex.def Info: corr_math.png  used on input line 151.
+Package pdftex.def Info: corr_math.png  used on input line 156.
 (pdftex.def)             Requested size: 273.14923pt x 227.61862pt.
  [4 <./datos1.png> <./corr_math.png>]
 <studytime_calificaciones.png, id=300, 1074.414pt x 351.9549pt>
 File: studytime_calificaciones.png Graphic file (type png)
 <use studytime_calificaciones.png>
-Package pdftex.def Info: studytime_calificaciones.png  used on input line 176.
+Package pdftex.def Info: studytime_calificaciones.png  used on input line 181.
 (pdftex.def)             Requested size: 455.24411pt x 149.12505pt.
 <ausencias_calificaciones.png, id=301, 1074.414pt x 351.9549pt>
 File: ausencias_calificaciones.png Graphic file (type png)
 <use ausencias_calificaciones.png>
-Package pdftex.def Info: ausencias_calificaciones.png  used on input line 187.
+Package pdftex.def Info: ausencias_calificaciones.png  used on input line 192.
 (pdftex.def)             Requested size: 455.24411pt x 149.12505pt.
  [5 <./studytime_calificaciones.png>]
 <evolucion_calificaciones.png, id=308, 1074.6549pt x 351.714pt>
 File: evolucion_calificaciones.png Graphic file (type png)
 <use evolucion_calificaciones.png>
-Package pdftex.def Info: evolucion_calificaciones.png  used on input line 198.
+Package pdftex.def Info: evolucion_calificaciones.png  used on input line 203.
 (pdftex.def)             Requested size: 455.24411pt x 148.99615pt.
  [6 <./ausencias_calificaciones.png> <./evolucion_calificaciones.png>]
-
-! LaTeX Error: Unicode character α (U+03B1)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.216 ...onclusión:} Diferencia significativa (α
-                                                   = 0.05)
-? 
 <ttest_genero.png, id=318, 1074.414pt x 712.8231pt>
 File: ttest_genero.png Graphic file (type png)
 <use ttest_genero.png>
-Package pdftex.def Info: ttest_genero.png  used on input line 229.
+Package pdftex.def Info: ttest_genero.png  used on input line 234.
 (pdftex.def)             Requested size: 455.24411pt x 302.02672pt.
+
 [7 <./ttest_genero.png>]
 <anova_educacion_madre.png, id=327, 1074.414pt x 713.3049pt>
 File: anova_educacion_madre.png Graphic file (type png)
 <use anova_educacion_madre.png>
-Package pdftex.def Info: anova_educacion_madre.png  used on input line 263.
+Package pdftex.def Info: anova_educacion_madre.png  used on input line 268.
 (pdftex.def)             Requested size: 455.24411pt x 302.23087pt.
 <educacion_padres_calificaciones.png, id=328, 1074.6549pt x 713.064pt>
 File: educacion_padres_calificaciones.png Graphic file (type png)
 <use educacion_padres_calificaciones.png>
 Package pdftex.def Info: educacion_padres_calificaciones.png  used on input lin
-e 270.
+e 275.
 (pdftex.def)             Requested size: 455.24411pt x 302.07439pt.
- [8 <./anova_educacion_madre.png>]
-Overfull \hbox (53.0683pt too wide) in paragraph at lines 292--303
- [][] 
- []
-
-[9 <./educacion_padres_calificaciones.png>]
+ [8 <./anova_educacion_madre.png>] [9 <./educacion_padres_calificaciones.png>]
 <pca_analisis.png, id=342, 1291.4649pt x 857.8449pt>
 File: pca_analisis.png Graphic file (type png)
 <use pca_analisis.png>
-Package pdftex.def Info: pca_analisis.png  used on input line 319.
+Package pdftex.def Info: pca_analisis.png  used on input line 326.
 (pdftex.def)             Requested size: 455.24411pt x 302.39691pt.
  [10 <./pca_analisis.png>]
-
-! LaTeX Error: Unicode character α (U+03B1)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.386 Ridge (α
-               =0.1) & 0.829 & 1.91 & 15 \\
-? 
-
-! LaTeX Error: Unicode character α (U+03B1)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.387 Lasso (α
-               =0.01) & 0.827 & 1.93 & 12 \\
-? 
 <regresion_lineal_matemáticas.png, id=350, 1074.414pt x 857.604pt>
 File: regresion_lineal_matemáticas.png Graphic file (type png)
 <use regresion_lineal_matemáticas.png>
 Package pdftex.def Info: regresion_lineal_matemáticas.png  used on input line 
-396.
+403.
 (pdftex.def)             Requested size: 455.24411pt x 363.37111pt.
-[11]
+ [11]
 <regresion_lineal_portugués.png, id=358, 1074.6549pt x 857.604pt>
 File: regresion_lineal_portugués.png Graphic file (type png)
 <use regresion_lineal_portugués.png>
-Package pdftex.def Info: regresion_lineal_portugués.png  used on input line 40
-3.
+Package pdftex.def Info: regresion_lineal_portugués.png  used on input line 41
+0.
 (pdftex.def)             Requested size: 455.24411pt x 363.30568pt.
- [12 <./regresion_lineal_matemáticas.png>]
-
-! LaTeX Error: Unicode character ≥ (U+2265)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.412     \item \textbf{Aprobar:} G3 ≥
-                                         10 (1)
-? 
-[13 <./regresion_lineal_portugués.png>] [14]
-
-! LaTeX Error: Unicode character β (U+03B2)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.494     \item G2 es el predictor más fuerte (β
-                                                   = 0.976), seguido de G1
-? 
+ [12 <./regresion_lineal_matemáticas.png>] [13 <./regresion_lineal_portugués.
+png>] [14]
 <pushs.png, id=378, 386.44376pt x 353.32pt>
 File: pushs.png Graphic file (type png)
 <use pushs.png>
-Package pdftex.def Info: pushs.png  used on input line 534.
+Package pdftex.def Info: pushs.png  used on input line 541.
 (pdftex.def)             Requested size: 364.19667pt x 332.98344pt.
-[15]
-Overfull \hbox (6.89488pt too wide) in paragraph at lines 539--540
-\OT1/cmr/m/n/12 re-po-si-to-rio de GitHub: []$\OT1/cmtt/m/n/12 https : / / gith
-ub . com / moisesbritez92 / trabajo _ ds _ alessandro _
- []
-
-[16 <./pushs.png>]
-
-! LaTeX Error: Invalid UTF-8 byte sequence (�\expandafter).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.560 # ANOVA para educación 
-                              materna
-? 
-
-! LaTeX Error: Invalid UTF-8 byte "B3.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.560 # ANOVA para educación 
-                              materna
-? 
-[17]
-
-! LaTeX Error: Invalid UTF-8 byte sequence (�\expandafter).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.609 print(f"R² 
-                  score: {r2:.3f}")
-? 
-
-! LaTeX Error: Invalid UTF-8 byte "B2.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.609 print(f"R² 
-                  score: {r2:.3f}")
-? 
+ [15] [16 <./pushs.png>] [17]
+LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 
+618.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/base/ts1cmtt.fd
+File: ts1cmtt.fd 2022/07/10 v2.5l Standard LaTeX font definitions
+)
 (/usr/local/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
 )
@@ -735,134 +629,9 @@ File: lstlang2.sty 2023/02/27 1.9 listings language file
 )
 (/usr/local/texlive/2023/texmf-dist/tex/latex/listings/lstlang3.sty
 File: lstlang3.sty 2023/02/27 1.9 listings language file
-)
-
-! LaTeX Error: Invalid UTF-8 byte sequence (�\expandafter).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.639 # Cargar librerías
-                         
-? 
-
-! LaTeX Error: Invalid UTF-8 byte "AD.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.639 # Cargar librerías
-                         
-? 
-
-! LaTeX Error: Invalid UTF-8 byte sequence (�\expandafter).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.648 # Estadísticas 
-                      descriptivas
-? 
-
-! LaTeX Error: Invalid UTF-8 byte "AD.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.648 # Estadísticas 
-                      descriptivas
-? 
-LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 
-649.
-(/usr/local/texlive/2023/texmf-dist/tex/latex/base/ts1cmtt.fd
-File: ts1cmtt.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 ) [18]
-
-! LaTeX Error: Invalid UTF-8 byte sequence (�\expandafter).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.661 ... "Calificaciones por Sexo - Matemáticas"
-                                                  )
-? 
-
-! LaTeX Error: Invalid UTF-8 byte "A1.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.661 ... "Calificaciones por Sexo - Matemáticas"
-                                                  )
-? 
-
-! LaTeX Error: Invalid UTF-8 byte sequence (�\expandafter).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.666 # ANOVA para educación 
-                              materna
-? 
-
-! LaTeX Error: Invalid UTF-8 byte "B3.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.666 # ANOVA para educación 
-                              materna
-? 
-
-! LaTeX Error: Invalid UTF-8 byte sequence (�\expandafter).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.670 # Gráfico 
-                 de medias con error bars
-? 
-
-! LaTeX Error: Invalid UTF-8 byte "A1.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.670 # Gráfico 
-                 de medias con error bars
-? 
-
-! LaTeX Error: Invalid UTF-8 byte sequence (�\expandafter).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.685 # Seleccionar variables numéricas
-                                        
-? 
-
-! LaTeX Error: Invalid UTF-8 byte "A9.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.685 # Seleccionar variables numéricas
-                                        
-? 
 [19]
-Overfull \hbox (59.10211pt too wide) in paragraph at lines 713--714
+Overfull \hbox (59.10211pt too wide) in paragraph at lines 722--723
 []\OT1/cmr/m/n/12 GitHub (2024). GitHub Co-pi-lot: Your AI pair pro-gram-mer. h
 ttps://github.com/features/copilot 
  []
@@ -871,20 +640,17 @@ ttps://github.com/features/copilot
 LaTeX Info: Redefining \. on input line 22.
 LaTeX Info: Redefining \% on input line 22.
 )
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `informe.out' has not changed.
 (rerunfilecheck)             Checksum: BD3030E9ADA314991FC0BD11C73FB70D;12906.
  ) 
 Here is how much of TeX's memory you used:
- 16266 strings out of 476025
- 252385 string characters out of 5790017
- 2126388 words of memory out of 5000000
- 36262 multiletter control sequences out of 15000+600000
+ 16473 strings out of 476025
+ 256453 string characters out of 5790017
+ 2127388 words of memory out of 5000000
+ 36461 multiletter control sequences out of 15000+600000
  524560 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,9n,77p,834b,2071s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,10n,77p,834b,2077s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><
@@ -900,10 +666,10 @@ live/2023/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texli
 ve/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive
 /2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2
 023/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on informe.pdf (20 pages, 4399546 bytes).
+Output written on informe.pdf (20 pages, 4402238 bytes).
 PDF statistics:
- 678 PDF objects out of 1000 (max. 8388607)
- 596 compressed objects within 6 object streams
+ 677 PDF objects out of 1000 (max. 8388607)
+ 595 compressed objects within 6 object streams
  251 named destinations out of 1000 (max. 500000)
  581 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -12,7 +12,7 @@
 \usepackage{booktabs}
 \usepackage{float}
 \usepackage{subcaption}
-\usepackage{listings}
+\usepackage{listingsutf8}
 \usepackage{xcolor}
 
 % Configuración de listings para código Python
@@ -24,7 +24,12 @@
     stringstyle=\color{red},
     breaklines=true,
     frame=single,
-    showstringspaces=false
+    showstringspaces=false,
+    inputencoding=utf8,
+    extendedchars=true,
+    literate={á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+             {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+             {ñ}{{\~n}}1 {Ñ}{{\~N}}1 {¿}{{?`}}1 {¡}{{!`}}1
 }
 
 \title{Análisis Estadístico Avanzado del Rendimiento Estudiantil: \\
@@ -95,8 +100,8 @@ En este análisis abordaremos \textbf{5 preguntas clave} que nos permitirán ent
 \end{itemize}
 
 \subsection{Regresión Logística (Clasificación)}
-\textbf{Pregunta:} ¿Podemos predecir si un estudiante aprobará (G3 ≥ 10) o suspenderá (G3 < 10)?
-
+\textbf{Pregunta:} ¿Podemos predecir si un estudiante aprobará (G3 $\ge$ 10) o suspenderá (G3 < 10)?
+ 
 \begin{itemize}
     \item \textbf{Variable dependiente:} Aprobar/Suspender (binaria)
     \item \textbf{Predictores:} tiempo de estudio, ausencias, sexo, acceso a internet, apoyo familiar
@@ -213,7 +218,7 @@ El análisis de diferencias de medias entre géneros reveló:
     \item \textbf{Media hombres:} 10.91 ± 4.45
     \item \textbf{Media mujeres:} 9.89 ± 4.65
     \item \textbf{t-statistic:} 2.14, p-value = 0.033
-    \item \textbf{Conclusión:} Diferencia significativa (α = 0.05)
+    \item \textbf{Conclusión:} Diferencia significativa ($\alpha$ = 0.05)
 \end{itemize}
 
 \subsubsection{Portugués}
@@ -289,9 +294,10 @@ El análisis PCA reveló la siguiente estructura de variabilidad:
 
 \begin{table}[H]
 \centering
+
 \begin{tabular}{lccc}
 \toprule
-\textbf{Componente} & \textbf{Varianza Explicada} & \textbf{Varianza Acumulada} & \textbf{Interpretación} \\
+\textbf{Componente} & \textbf{Var. Explicada} & \textbf{Var. Acumulada} & \textbf{Interpretación} \\
 \midrule
 PC1 & 23.4\% & 23.4\% & Factor socio-económico \\
 PC2 & 18.7\% & 42.1\% & Factor académico-conductual \\
@@ -300,6 +306,7 @@ PC4 & 9.8\% & 64.8\% & Factor de salud \\
 PC5 & 8.1\% & 72.9\% & Factor temporal \\
 \bottomrule
 \end{tabular}
+
 \caption{Varianza explicada por componentes principales}
 \label{tab:pca_varianza}
 \end{table}
@@ -355,7 +362,7 @@ Variables predictoras seleccionadas: studytime, failures, absences, G1, G2, Medu
 \textbf{Variable} & \textbf{Coeficiente} & \textbf{Error Estándar} & \textbf{t-value} & \textbf{p-value} \\
 \midrule
 G1 & 0.158 & 0.052 & 3.04 & 0.003** \\
-G2 & 0.976 & 0.051 & 19.12 & <0.001*** \\
+G2 & 0.976 & 0.051 & 19.12 & $<$ 0.001*** \\
 studytime & 0.312 & 0.158 & 1.97 & 0.049* \\
 failures & -0.421 & 0.187 & -2.25 & 0.025* \\
 absences & -0.034 & 0.015 & -2.27 & 0.024* \\
@@ -368,10 +375,10 @@ Medu & 0.092 & 0.108 & 0.85 & 0.395 \\
 
 \subsubsection{Desempeño del modelo}
 \begin{itemize}
-    \item \textbf{R² ajustado:} 0.831
+    \item \textbf{$R^2$ ajustado:} 0.831
     \item \textbf{RMSE:} 1.89
     \item \textbf{MAE:} 1.45
-    \item \textbf{F-statistic:} 142.3, p < 0.001
+    \item \textbf{F-statistic:} 142.3, p $<$ 0.001
 \end{itemize}
 
 \subsubsection{Comparación con regularización}
@@ -383,8 +390,8 @@ Medu & 0.092 & 0.108 & 0.85 & 0.395 \\
 \textbf{Modelo} & \textbf{R²} & \textbf{RMSE} & \textbf{Variables activas} \\
 \midrule
 Lineal simple & 0.831 & 1.89 & 15 \\
-Ridge (α=0.1) & 0.829 & 1.91 & 15 \\
-Lasso (α=0.01) & 0.827 & 1.93 & 12 \\
+Ridge ($\alpha=0.1$) & 0.829 & 1.91 & 15 \\
+Lasso ($\alpha=0.01$) & 0.827 & 1.93 & 12 \\
 \bottomrule
 \end{tabular}
 \caption{Comparación de modelos de regresión}
@@ -409,8 +416,8 @@ Lasso (α=0.01) & 0.827 & 1.93 & 12 \\
 
 \subsubsection{Variable dependiente}
 \begin{itemize}
-    \item \textbf{Aprobar:} G3 ≥ 10 (1)
-    \item \textbf{Suspender:} G3 < 10 (0)
+    \item \textbf{Aprobar:} G3 $\geq$ 10 (1)
+    \item \textbf{Suspender:} G3 $<$ 10 (0)
     \item \textbf{Distribución:} 67.1\% aprueban, 32.9\% suspenden (Matemáticas)
 \end{itemize}
 
@@ -426,9 +433,9 @@ studytime, absences, sex, internet, famsup, failures, G1, G2, Medu, Fedu
 \textbf{Variable} & \textbf{Coeficiente} & \textbf{Odds Ratio} & \textbf{IC 95\%} & \textbf{p-value} \\
 \midrule
 G1 & 0.145 & 1.156 & (1.025, 1.304) & 0.020* \\
-G2 & 0.687 & 1.988 & (1.721, 2.294) & <0.001*** \\
+G2 & 0.687 & 1.988 & (1.721, 2.294) & $<$ 0.001*** \\
 studytime & 0.421 & 1.524 & (1.089, 2.131) & 0.014* \\
-failures & -1.234 & 0.291 & (0.184, 0.460) & <0.001*** \\
+failures & -1.234 & 0.291 & (0.184, 0.460) & $<$ 0.001*** \\
 absences & -0.056 & 0.946 & (0.909, 0.984) & 0.006** \\
 sex (M) & 0.387 & 1.473 & (0.895, 2.424) & 0.127 \\
 \bottomrule
@@ -473,7 +480,7 @@ AUC-ROC & 0.924 & 0.901 \\
 \textbf{Resultado:} Confirmada.
 \begin{itemize}
     \item Diferencias significativas entre grupos (F = 3.89, p = 0.004)
-    \item Tendencia clara: mayor educación materna → mejor rendimiento estudiantil
+    \item Tendencia clara: mayor educación materna $\longmapsto$ mejor rendimiento estudiantil
     \item Diferencia entre nivel 0 y 4: +3.53 puntos en promedio
     \item \textbf{Implicación:} El capital educativo familiar es un factor determinante
 \end{itemize}
@@ -490,8 +497,8 @@ AUC-ROC & 0.924 & 0.901 \\
 \subsubsection{4. Predicción de calificaciones (Regresión Lineal)}
 \textbf{Resultado:} Muy exitosa.
 \begin{itemize}
-    \item R² = 0.831 indica excelente capacidad predictiva
-    \item G2 es el predictor más fuerte (β = 0.976), seguido de G1
+    \item $R^2$ = 0.831 indica excelente capacidad predictiva
+    \item G2 es el predictor más fuerte ($\beta = 0.976$), seguido de G1
     \item Variables socio-familiares tienen menor impacto individual
     \item La regularización no mejora significativamente el modelo
     \item \textbf{Implicación:} El rendimiento pasado es el mejor predictor del futuro
@@ -536,7 +543,9 @@ AUC-ROC & 0.924 & 0.901 \\
     \label{fig:pushs}
 \end{figure}
 
-Para mas información, el código completo y los datos están disponibles en el siguiente repositorio de GitHub: \url{https://github.com/moisesbritez92/trabajo_ds_alessandro_moises.git}
+Para mas información, el código completo y los datos están disponibles en el siguiente repositorio de GitHub: \\
+ \url{https://github.com/moisesbritez92/trabajo_ds_alessandro_moises.git}
+
 \subsection{Código Python principal}
 
 \subsubsection{Análisis t-test}
@@ -606,7 +615,7 @@ y_pred = model.predict(X)
 r2 = r2_score(y, y_pred)
 rmse = np.sqrt(mean_squared_error(y, y_pred))
 
-print(f"R² score: {r2:.3f}")
+print(f"\text($R^2$) score: {r2:.3f}")
 print(f"RMSE: {rmse:.3f}")
 \end{lstlisting}
 
