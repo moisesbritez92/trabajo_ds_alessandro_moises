@@ -41,10 +41,6 @@ Aplicación de Inferencia Estadística y Manipulación de Datos}
 
 \maketitle
 
-\begin{abstract}
-Este informe presenta un análisis estadístico completo del dataset de rendimiento estudiantil en matemáticas y portugués. Se aplicaron técnicas avanzadas de inferencia estadística incluyendo análisis de estimadores, verificación de normalidad, pruebas no paramétricas (Mann-Whitney U), ANOVA, análisis de componentes principales (PCA), y modelos predictivos de regresión lineal y logística. Los resultados muestran que las calificaciones promedio en matemáticas (10.42 ± 4.58) y portugués (11.91 ± 3.93) difieren significativamente, con mayor variabilidad en matemáticas. El test de Mann-Whitney U reveló diferencias significativas por género en matemáticas (p = 0.029) pero no en portugués. El análisis ANOVA confirmó el impacto significativo del nivel educativo materno (p = 0.004). Los modelos predictivos alcanzaron un R² = 0.831 en regresión lineal y AUC-ROC = 0.901 en clasificación logística, demostrando excelente capacidad para predecir el rendimiento académico. El análisis confirma que las calificaciones previas son los mejores predictores del éxito futuro, seguidos por factores socio-familiares como el nivel educativo de los padres.
-\end{abstract}
-
 \section{Introducción}
 
 \subsection{Contexto del dataset}
@@ -167,9 +163,6 @@ El análisis de completitud mostró:
     \item \textbf{Portugués:} 0 valores faltantes en variables clave
     \item Dataset completo sin necesidad de imputación
 \end{itemize}
-
-\subsubsection{Detección de outliers}
-Se identificaron outliers mediante análisis de robustez de estimadores, mostrando que la mediana es completamente robusta ante valores extremos mientras que la media presenta sensibilidad significativa.
 
 \subsection{Análisis de factores académicos}
 

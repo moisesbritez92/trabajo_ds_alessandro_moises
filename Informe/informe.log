@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.5.5)  25 OCT 2025 11:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.5.5)  25 OCT 2025 12:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -550,7 +550,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 [1
 
 {C:/Users/moise/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
-Overfull \hbox (3.51344pt too wide) in paragraph at lines 89--90
+Overfull \hbox (3.51344pt too wide) in paragraph at lines 85--86
 []\OT1/cmr/bx/n/12 Variables: \OT1/cmr/m/n/12 fam-si-ze, tra-vel-ti-me, study-t
 i-me, fai-lu-res, ab-sen-ces, fam-rel, free-ti-me, goout,
  []
@@ -558,158 +558,155 @@ i-me, fai-lu-res, ab-sen-ces, fam-rel, free-ti-me, goout,
 
 
 [2]
-<datos1.png, id=304, 1084.05pt x 722.7pt>
+<datos1.png, id=302, 1084.05pt x 722.7pt>
 File: datos1.png Graphic file (type png)
 <use datos1.png>
-Package pdftex.def Info: datos1.png  used on input line 146.
+Package pdftex.def Info: datos1.png  used on input line 142.
 (pdftex.def)             Requested size: 455.24411pt x 303.49884pt.
-
-
-[3]
-<corr_math.png, id=312, 867.24pt x 722.7pt>
+<corr_math.png, id=304, 867.24pt x 722.7pt>
 File: corr_math.png Graphic file (type png)
 <use corr_math.png>
-Package pdftex.def Info: corr_math.png  used on input line 157.
+Package pdftex.def Info: corr_math.png  used on input line 153.
 (pdftex.def)             Requested size: 273.14923pt x 227.61862pt.
 
 
-[4 <./datos1.png> <./corr_math.png>]
-<educacion_padres_calificaciones.png, id=321, 1074.6549pt x 712.8231pt>
+[3 <./datos1.png>]
+<educacion_padres_calificaciones.png, id=312, 1074.6549pt x 712.8231pt>
 File: educacion_padres_calificaciones.png Graphic file (type png)
 <use educacion_padres_calificaciones.png>
 Package pdftex.def Info: educacion_padres_calificaciones.png  used on input lin
-e 191.
+e 184.
 (pdftex.def)             Requested size: 455.24411pt x 301.97234pt.
 
 
-[5]
-<studytime_calificaciones.png, id=326, 1074.414pt x 351.9549pt>
+[4 <./corr_math.png>]
+<studytime_calificaciones.png, id=319, 1074.414pt x 351.9549pt>
 File: studytime_calificaciones.png Graphic file (type png)
 <use studytime_calificaciones.png>
-Package pdftex.def Info: studytime_calificaciones.png  used on input line 202.
+Package pdftex.def Info: studytime_calificaciones.png  used on input line 195.
 (pdftex.def)             Requested size: 455.24411pt x 149.12505pt.
-<ausencias_calificaciones.png, id=327, 1074.414pt x 351.9549pt>
+<ausencias_calificaciones.png, id=320, 1074.414pt x 351.9549pt>
 File: ausencias_calificaciones.png Graphic file (type png)
 <use ausencias_calificaciones.png>
-Package pdftex.def Info: ausencias_calificaciones.png  used on input line 213.
+Package pdftex.def Info: ausencias_calificaciones.png  used on input line 206.
 (pdftex.def)             Requested size: 455.24411pt x 149.12505pt.
 
 
-[6 <./educacion_padres_calificaciones.png> <./studytime_calificaciones.png>]
-<evolucion_calificaciones.png, id=336, 1074.6549pt x 351.714pt>
+[5 <./educacion_padres_calificaciones.png> <./studytime_calificaciones.png>]
+<evolucion_calificaciones.png, id=329, 1074.6549pt x 351.714pt>
 File: evolucion_calificaciones.png Graphic file (type png)
 <use evolucion_calificaciones.png>
-Package pdftex.def Info: evolucion_calificaciones.png  used on input line 224.
+Package pdftex.def Info: evolucion_calificaciones.png  used on input line 217.
 (pdftex.def)             Requested size: 455.24411pt x 148.99615pt.
 
 
-[7 <./ausencias_calificaciones.png> <./evolucion_calificaciones.png>]
-<mannwhitney_genero.png, id=346, 1074.414pt x 712.8231pt>
+[6 <./ausencias_calificaciones.png> <./evolucion_calificaciones.png>]
+<mannwhitney_genero.png, id=338, 1074.414pt x 712.8231pt>
 File: mannwhitney_genero.png Graphic file (type png)
 <use mannwhitney_genero.png>
-Package pdftex.def Info: mannwhitney_genero.png  used on input line 275.
+Package pdftex.def Info: mannwhitney_genero.png  used on input line 268.
 (pdftex.def)             Requested size: 455.24411pt x 302.02672pt.
 
 
-[8]
+[7]
 
-[9 <./mannwhitney_genero.png>]
-<anova_educacion_madre.png, id=362, 1074.414pt x 712.3413pt>
+[8 <./mannwhitney_genero.png>]
+<anova_educacion_madre.png, id=355, 1074.414pt x 712.3413pt>
 File: anova_educacion_madre.png Graphic file (type png)
 <use anova_educacion_madre.png>
-Package pdftex.def Info: anova_educacion_madre.png  used on input line 317.
+Package pdftex.def Info: anova_educacion_madre.png  used on input line 310.
 (pdftex.def)             Requested size: 455.24411pt x 301.82257pt.
 
 
-[10 <./anova_educacion_madre.png>]
-<pca_analisis.png, id=369, 1291.4649pt x 857.8449pt>
+[9 <./anova_educacion_madre.png>]
+<pca_analisis.png, id=362, 1291.4649pt x 857.8449pt>
 File: pca_analisis.png Graphic file (type png)
 <use pca_analisis.png>
-Package pdftex.def Info: pca_analisis.png  used on input line 368.
+Package pdftex.def Info: pca_analisis.png  used on input line 361.
 (pdftex.def)             Requested size: 455.24411pt x 302.39691pt.
 
 
-[11 <./pca_analisis.png>]
+[10 <./pca_analisis.png>]
 
-[12]
-<regresion_lineal_matemáticas.png, id=382, 1074.414pt x 857.604pt>
+[11]
+<regresion_lineal_matemáticas.png, id=375, 1074.414pt x 857.604pt>
 File: regresion_lineal_matemáticas.png Graphic file (type png)
 <use regresion_lineal_matemáticas.png>
 Package pdftex.def Info: regresion_lineal_matemáticas.png  used on input line 
-445.
+438.
 (pdftex.def)             Requested size: 455.24411pt x 363.37111pt.
-<regresion_lineal_portugués.png, id=383, 1074.6549pt x 857.604pt>
+<regresion_lineal_portugués.png, id=376, 1074.6549pt x 857.604pt>
 File: regresion_lineal_portugués.png Graphic file (type png)
 <use regresion_lineal_portugués.png>
-Package pdftex.def Info: regresion_lineal_portugués.png  used on input line 45
-2.
+Package pdftex.def Info: regresion_lineal_portugués.png  used on input line 44
+5.
 (pdftex.def)             Requested size: 455.24411pt x 363.30568pt.
 
 
-[13 <./regresion_lineal_matemáticas.png>]
+[12 <./regresion_lineal_matemáticas.png>]
 
-[14 <./regresion_lineal_portugués.png>]
-<regresion_logistica_matemáticas_metricas.png, id=399, 1291.4649pt x 857.1222p
+[13 <./regresion_lineal_portugués.png>]
+<regresion_logistica_matemáticas_metricas.png, id=392, 1291.4649pt x 857.1222p
 t>
 File: regresion_logistica_matemáticas_metricas.png Graphic file (type png)
 <use regresion_logistica_matemáticas_metricas.png>
 Package pdftex.def Info: regresion_logistica_matemáticas_metricas.png  used on
- input line 520.
+ input line 513.
 (pdftex.def)             Requested size: 455.24411pt x 302.14215pt.
 
 
-[15]
-<regresion_logistica_matemáticas_confusion_roc.png, id=406, 823.3962pt x 351.9
+[14]
+<regresion_logistica_matemáticas_confusion_roc.png, id=399, 823.3962pt x 351.9
 549pt>
 File: regresion_logistica_matemáticas_confusion_roc.png Graphic file (type png
 )
 <use regresion_logistica_matemáticas_confusion_roc.png>
 Package pdftex.def Info: regresion_logistica_matemáticas_confusion_roc.png  us
-ed on input line 527.
+ed on input line 520.
 (pdftex.def)             Requested size: 455.24411pt x 194.59079pt.
-<regresion_logistica_portugués_metricas.png, id=407, 1291.4649pt x 857.1222pt>
+<regresion_logistica_portugués_metricas.png, id=400, 1291.4649pt x 857.1222pt>
 
 File: regresion_logistica_portugués_metricas.png Graphic file (type png)
 <use regresion_logistica_portugués_metricas.png>
 Package pdftex.def Info: regresion_logistica_portugués_metricas.png  used on i
-nput line 534.
+nput line 527.
 (pdftex.def)             Requested size: 455.24411pt x 302.14215pt.
 
 
-[16 <./regresion_logistica_matemáticas_metricas.png> <./regresion_logistica_ma
+[15 <./regresion_logistica_matemáticas_metricas.png> <./regresion_logistica_ma
 temáticas_confusion_roc.png>]
-<regresion_logistica_portugués_confusion_roc.png, id=416, 823.3962pt x 351.954
+<regresion_logistica_portugués_confusion_roc.png, id=409, 823.3962pt x 351.954
 9pt>
 File: regresion_logistica_portugués_confusion_roc.png Graphic file (type png)
 <use regresion_logistica_portugués_confusion_roc.png>
 Package pdftex.def Info: regresion_logistica_portugués_confusion_roc.png  used
- on input line 541.
+ on input line 534.
 (pdftex.def)             Requested size: 455.24411pt x 194.59079pt.
 
 
-[17 <./regresion_logistica_portugués_metricas.png> <./regresion_logistica_port
+[16 <./regresion_logistica_portugués_metricas.png> <./regresion_logistica_port
 ugués_confusion_roc.png>]
 
-[18]
-<pushs.png, id=433, 386.44376pt x 353.32pt>
+[17]
+<pushs.png, id=426, 518.43687pt x 203.25937pt>
 File: pushs.png Graphic file (type png)
 <use pushs.png>
-Package pdftex.def Info: pushs.png  used on input line 631.
-(pdftex.def)             Requested size: 364.19667pt x 332.98344pt.
+Package pdftex.def Info: pushs.png  used on input line 624.
+(pdftex.def)             Requested size: 364.19667pt x 142.79543pt.
 
 
-[19]
+[18]
 
-[20 <./pushs.png>]
+[19 <./pushs.png>]
 
-[21]
+[20]
 LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 
-732.
+725.
  (C:\Users\moise\AppData\Local\Programs\MiKTeX\tex/latex/base\ts1cmtt.fd
 File: ts1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
 
-[22]
+[21]
 (C:\Users\moise\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2024/05/25 1.10b listings language file
 )
@@ -720,17 +717,17 @@ File: lstlang2.sty 2024/05/25 1.10b listings language file
 File: lstlang3.sty 2024/05/25 1.10b listings language file
 )
 
-[23]
+[22]
 
-[24]
-Overfull \hbox (59.10211pt too wide) in paragraph at lines 876--877
+[23]
+Overfull \hbox (59.10211pt too wide) in paragraph at lines 869--870
 []\OT1/cmr/m/n/12 GitHub (2024). GitHub Co-pi-lot: Your AI pair pro-gram-mer. h
 ttps://github.com/features/copilot 
  []
 
 
 
-[25] (informe.aux
+[24] (informe.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
 )
@@ -738,36 +735,44 @@ LaTeX Info: Redefining \% on input line 11.
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-08-30>
  ***********
-Package rerunfilecheck Info: File `informe.out' has not changed.
-(rerunfilecheck)             Checksum: 3FBF024B5001A06AB2851A902B3373DB;14523.
+
+
+Package rerunfilecheck Warning: File `informe.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `informe.out':
+(rerunfilecheck)             Before: 3FBF024B5001A06AB2851A902B3373DB;14523
+(rerunfilecheck)             After:  09921E66E91B842DFF18082A232A9627;14341.
  ) 
 Here is how much of TeX's memory you used:
- 16840 strings out of 473899
- 262852 string characters out of 5726501
- 1122473 words of memory out of 5000000
- 39182 multiletter control sequences out of 15000+600000
- 570342 words of font info for 83 fonts, out of 8000000 for 9000
+ 16833 strings out of 473899
+ 262736 string characters out of 5726501
+ 1115473 words of memory out of 5000000
+ 39178 multiletter control sequences out of 15000+600000
+ 569693 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,10n,79p,1213b,2719s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\moise\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tctt
-1095.pk> <C:\Users\moise\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
-0\tcbx1200.pk> <C:\Users\moise\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
-/dpi600\tcrm1200.pk> <C:\Users\moise\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
-pen/ec/dpi600\tcrm1095.pk><C:/Users/moise/AppData/Local/Programs/MiKTeX/fonts/t
-ype1/public/amsfonts/cm/cmbx10.pfb><C:/Users/moise/AppData/Local/Programs/MiKTe
-X/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/moise/AppData/Local/Progr
-ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/moise/AppData/Lo
-cal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/moise/Ap
-pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/
-moise/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C
-:/Users/moise/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8
-.pfb><C:/Users/moise/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/
-cm/cmsy10.pfb><C:/Users/moise/AppData/Local/Programs/MiKTeX/fonts/type1/public/
-amsfonts/cm/cmtt10.pfb><C:/Users/moise/AppData/Local/Programs/MiKTeX/fonts/type
-1/public/amsfonts/cm/cmtt12.pfb>
-Output written on informe.pdf (25 pages, 5476047 bytes).
+ 75i,10n,79p,415b,2174s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{subsubsection.3.4.2} has been referenced but does n
+ot exist, replaced by a fixed one
+
+ <C:\Users\moise\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tctt10
+95.pk> <C:\Users\moise\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\
+tcbx1200.pk> <C:\Users\moise\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/d
+pi600\tcrm1200.pk><C:/Users/moise/AppData/Local/Programs/MiKTeX/fonts/type1/pub
+lic/amsfonts/cm/cmbx12.pfb><C:/Users/moise/AppData/Local/Programs/MiKTeX/fonts/
+type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/moise/AppData/Local/Programs/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/moise/AppData/Local/Progr
+ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/moise/AppData/Loc
+al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/moise/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/m
+oise/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C
+:/Users/moise/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt
+12.pfb>
+Output written on informe.pdf (24 pages, 5395076 bytes).
 PDF statistics:
- 813 PDF objects out of 1000 (max. 8388607)
- 337 named destinations out of 1000 (max. 500000)
+ 791 PDF objects out of 1000 (max. 8388607)
+ 336 named destinations out of 1000 (max. 500000)
  649 words of extra memory for PDF output out of 10000 (max. 10000000)
 
