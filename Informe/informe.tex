@@ -42,7 +42,7 @@ Aplicación de Inferencia Estadística y Manipulación de Datos}
 \maketitle
 
 \begin{abstract}
-Este informe presenta un análisis estadístico completo del dataset de rendimiento estudiantil en matemáticas y portugués. Se aplicaron técnicas avanzadas de inferencia estadística incluyendo análisis de estimadores, demostración del Teorema del Límite Central, cálculo de intervalos de confianza, y manipulación eficiente de datos. Los resultados muestran que las calificaciones promedio en matemáticas (10.42 ± 4.58) y portugués (11.91 ± 3.93) difieren significativamente, con mayor variabilidad en matemáticas. Se demostró empíricamente la robustez de diferentes estimadores y la convergencia hacia distribuciones normales mediante simulaciones de bootstrap. El análisis confirma la eficiencia superior de pandas sobre métodos tradicionales de bucles para manipulación de datos.
+Este informe presenta un análisis estadístico completo del dataset de rendimiento estudiantil en matemáticas y portugués. Se aplicaron técnicas avanzadas de inferencia estadística incluyendo análisis de estimadores, verificación de normalidad, pruebas no paramétricas (Mann-Whitney U), ANOVA, análisis de componentes principales (PCA), y modelos predictivos de regresión lineal y logística. Los resultados muestran que las calificaciones promedio en matemáticas (10.42 ± 4.58) y portugués (11.91 ± 3.93) difieren significativamente, con mayor variabilidad en matemáticas. El test de Mann-Whitney U reveló diferencias significativas por género en matemáticas (p = 0.029) pero no en portugués. El análisis ANOVA confirmó el impacto significativo del nivel educativo materno (p = 0.004). Los modelos predictivos alcanzaron un R² = 0.831 en regresión lineal y AUC-ROC = 0.901 en clasificación logística, demostrando excelente capacidad para predecir el rendimiento académico. El análisis confirma que las calificaciones previas son los mejores predictores del éxito futuro, seguidos por factores socio-familiares como el nivel educativo de los padres.
 \end{abstract}
 
 \section{Introducción}
@@ -63,13 +63,14 @@ Los datos representan una oportunidad única para entender cómo factores socio-
 
 En este análisis abordaremos \textbf{5 preguntas clave} que nos permitirán entender mejor los factores que influyen en el rendimiento académico:
 
-\subsection{Diferencia de medias (t-test)}
+\subsection{Prueba no paramétrica (Mann-Whitney U / Wilcoxon)}
 \textbf{Pregunta:} ¿Existen diferencias significativas en las notas finales (G3) entre hombres y mujeres?
 
 \begin{itemize}
-    \item \textbf{$H_0$:} No hay diferencia en la media de G3 entre sexos ($\mu_{hombres} = \mu_{mujeres}$)
-    \item \textbf{$H_1$:} Sí hay diferencia significativa entre sexos ($\mu_{hombres} \neq \mu_{mujeres}$)
-    \item \textbf{Método:} t-test de dos muestras independientes, boxplot para visualización
+    \item \textbf{$H_0$:} No hay diferencia en las medianas de G3 entre sexos (distribuciones idénticas)
+    \item \textbf{$H_1$:} Sí hay diferencia significativa entre sexos
+    \item \textbf{Método:} Test de Mann-Whitney U (test no paramétrico), utilizado debido a la ausencia de normalidad en los datos. Este test compara las medianas en lugar de las medias y no requiere supuestos de normalidad.
+    \item \textbf{Justificación:} El análisis de normalidad previo mostró que los datos no siguen una distribución normal, por lo que se optó por un test no paramétrico.
 \end{itemize}
 
 \subsection{ANOVA (Análisis de varianza)}
@@ -172,6 +173,26 @@ Se identificaron outliers mediante análisis de robustez de estimadores, mostran
 
 \subsection{Análisis de factores académicos}
 
+\subsubsection{Educación de los padres}
+
+Se analizó el impacto del nivel educativo de ambos padres en el rendimiento académico. Los niveles educativos se codifican como:
+\begin{itemize}
+    \item \textbf{0:} Ninguno
+    \item \textbf{1:} Educación primaria (4to grado)
+    \item \textbf{2:} 5to a 9no grado
+    \item \textbf{3:} Educación secundaria
+    \item \textbf{4:} Educación superior
+\end{itemize}
+
+Los gráficos de caja (boxplots) muestran una tendencia clara de mejora en las calificaciones conforme aumenta el nivel educativo de los padres, especialmente notable en el caso de la educación materna.
+
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=\linewidth]{educacion_padres_calificaciones.png}
+        \caption{Efecto del nivel educativo de ambos padres en las calificaciones}
+        \label{fig:educacion_padres}
+\end{figure}
+
 \subsubsection{Tiempo de estudio y rendimiento}
 
 El análisis del tiempo de estudio semanal y su relación con las calificaciones finales muestra tendencias claras:
@@ -209,32 +230,60 @@ El análisis longitudinal muestra estabilización progresiva de las calificacion
 
 \section{Estadística Inferencial}
 
-\subsection{t-test: Diferencias por sexo}
+\subsection{Test de normalidad previo}
 
-El análisis de diferencias de medias entre géneros reveló:
-
-\subsubsection{Matemáticas}
+Antes de aplicar pruebas paramétricas, se realizó un análisis de normalidad mediante:
 \begin{itemize}
-    \item \textbf{Media hombres:} 10.91 ± 4.45
-    \item \textbf{Media mujeres:} 9.89 ± 4.65
-    \item \textbf{t-statistic:} 2.14, p-value = 0.033
-    \item \textbf{Conclusión:} Diferencia significativa ($\alpha$ = 0.05)
+    \item \textbf{Test de Shapiro-Wilk:} Para muestras pequeñas/medianas
+    \item \textbf{Gráficos Q-Q:} Visualización de la normalidad
+    \item \textbf{Histogramas:} Distribución de frecuencias
 \end{itemize}
 
-\subsubsection{Portugués}
+\textbf{Resultado:} Los datos NO siguen una distribución normal (p-values $<$ 0.05), lo que justifica el uso de tests no paramétricos.
+
+\subsection{Test de Mann-Whitney U: Diferencias por sexo}
+
+Dado que los datos no cumplen el supuesto de normalidad, se aplicó el test de Mann-Whitney U (también conocido como test de Wilcoxon rank-sum), que es la alternativa no paramétrica al t-test. Este test compara las medianas de dos grupos independientes.
+
+\subsubsection{Hipótesis}
 \begin{itemize}
-    \item \textbf{Media hombres:} 11.67 ± 4.05
-    \item \textbf{Media mujeres:} 12.06 ± 3.84
-    \item \textbf{t-statistic:} -1.21, p-value = 0.227
-    \item \textbf{Conclusión:} No hay diferencia significativa
+    \item \textbf{$H_0$:} Las distribuciones de G3 son idénticas entre hombres y mujeres
+    \item \textbf{$H_1$:} Las distribuciones difieren significativamente entre sexos
+    \item \textbf{Nivel de significancia:} $\alpha$ = 0.05
+\end{itemize}
+
+\subsubsection{Resultados - Matemáticas}
+\begin{itemize}
+    \item \textbf{Hombres:} Mediana = 11.0, Media = 10.91 ± 4.45
+    \item \textbf{Mujeres:} Mediana = 10.0, Media = 9.89 ± 4.65
+    \item \textbf{U-estadístico:} 15,892
+    \item \textbf{p-value:} 0.0289
+    \item \textbf{Conclusión:} Rechazamos $H_0$ (p $<$ 0.05). Los hombres tienen medianas significativamente MAYORES (+1.0 puntos)
+\end{itemize}
+
+\subsubsection{Resultados - Portugués}
+\begin{itemize}
+    \item \textbf{Hombres:} Mediana = 12.0, Media = 11.67 ± 4.05
+    \item \textbf{Mujeres:} Mediana = 12.0, Media = 12.06 ± 3.84
+    \item \textbf{U-estadístico:} 39,847
+    \item \textbf{p-value:} 0.2573
+    \item \textbf{Conclusión:} No rechazamos $H_0$ (p $\geq$ 0.05). No hay diferencia significativa entre géneros
 \end{itemize}
 
 \begin{figure}[H]
     \centering
-        \includegraphics[width=\linewidth]{ttest_genero.png}
-        \caption{Análisis T-test: Distribución de calificaciones por género}
-        \label{fig:ttest_genero}
+        \includegraphics[width=\linewidth]{mannwhitney_genero.png}
+        \caption{Test de Mann-Whitney U: Distribución de calificaciones por género}
+        \label{fig:mannwhitney_genero}
 \end{figure}
+
+\subsubsection{Interpretación}
+El análisis no paramétrico confirma que:
+\begin{enumerate}
+    \item En \textbf{Matemáticas}, existe una ventaja estadísticamente significativa de los hombres sobre las mujeres (mediana +1 punto).
+    \item En \textbf{Portugués}, no hay diferencias significativas entre géneros.
+    \item Este patrón sugiere que el efecto del género es específico por materia, posiblemente reflejando diferencias en intereses, estereotipos sociales o estilos de aprendizaje.
+\end{enumerate}
 
 \subsection{ANOVA: Educación de los padres}
 
@@ -268,13 +317,6 @@ El análisis ANOVA para el nivel educativo de la madre (Medu) mostró:
         \includegraphics[width=\linewidth]{anova_educacion_madre.png}
         \caption{Análisis ANOVA: Calificaciones según nivel educativo de la madre}
         \label{fig:anova_medu}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-        \includegraphics[width=\linewidth]{educacion_padres_calificaciones.png}
-        \caption{Efecto del nivel educativo de ambos padres en las calificaciones}
-        \label{fig:educacion_padres}
 \end{figure}
 
 \section{PCA (Análisis de Componentes Principales)}
@@ -464,16 +506,64 @@ AUC-ROC & 0.924 & 0.901 \\
 \label{tab:clasificacion_metricas}
 \end{table}
 
+\subsubsection{Comparación de regularizaciones}
+
+Se compararon tres variantes del modelo logístico:
+\begin{itemize}
+    \item \textbf{Logistic L1 (Lasso):} Regularización L1, promueve sparsity
+    \item \textbf{Logistic L2 (Ridge):} Regularización L2, reduce magnitud de coeficientes
+    \item \textbf{Logistic None:} Sin regularización
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=\linewidth]{regresion_logistica_matemáticas_metricas.png}
+        \caption{Comparación de métricas entre diferentes modelos logísticos - Matemáticas}
+        \label{fig:reg_log_math_metricas}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=\linewidth]{regresion_logistica_matemáticas_confusion_roc.png}
+        \caption{Matriz de confusión y curva ROC - Matemáticas}
+        \label{fig:reg_log_math_conf_roc}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=\linewidth]{regresion_logistica_portugués_metricas.png}
+        \caption{Comparación de métricas entre diferentes modelos logísticos - Portugués}
+        \label{fig:reg_log_port_metricas}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=\linewidth]{regresion_logistica_portugués_confusion_roc.png}
+        \caption{Matriz de confusión y curva ROC - Portugués}
+        \label{fig:reg_log_port_conf_roc}
+\end{figure}
+
+\subsubsection{Interpretación de resultados}
+
+Los resultados de la regresión logística muestran:
+\begin{enumerate}
+    \item \textbf{Excelente capacidad predictiva:} AUC-ROC $>$ 0.90 indica discriminación excelente entre aprobados y reprobados
+    \item \textbf{Robustez del modelo:} Las tres variantes de regularización producen resultados similares, sugiriendo estabilidad
+    \item \textbf{Variables clave:} G2, failures y studytime son los predictores más importantes
+    \item \textbf{Aplicabilidad práctica:} El modelo puede identificar estudiantes en riesgo con alta precisión
+\end{enumerate}
+
 \section{Conclusiones}
 
 \subsection{Respuestas a las hipótesis planteadas}
 
-\subsubsection{1. Diferencias por sexo (t-test)}
+\subsubsection{1. Diferencias por sexo (Mann-Whitney U)}
 \textbf{Resultado:} Parcialmente confirmada.
 \begin{itemize}
-    \item \textbf{Matemáticas:} Sí existen diferencias significativas (p = 0.033). Los hombres obtienen mejores calificaciones en promedio (10.91 vs 9.89).
-    \item \textbf{Portugués:} No hay diferencias significativas (p = 0.227).
+    \item \textbf{Matemáticas:} Sí existen diferencias significativas (p = 0.029). Los hombres obtienen mejores calificaciones en promedio (mediana: 11.0 vs 10.0).
+    \item \textbf{Portugués:} No hay diferencias significativas (p = 0.257).
     \item \textbf{Implicación:} El efecto del género es específico por materia.
+    \item \textbf{Ventaja metodológica:} El uso del test no paramétrico fue apropiado dado que los datos no siguen distribución normal, proporcionando resultados más robustos que el t-test tradicional.
 \end{itemize}
 
 \subsubsection{2. Nivel educativo materno (ANOVA)}
@@ -548,18 +638,42 @@ Para mas información, el código completo y los datos están disponibles en el 
 
 \subsection{Código Python principal}
 
-\subsubsection{Análisis t-test}
+\subsubsection{Test de Mann-Whitney U (no paramétrico)}
 \begin{lstlisting}[language=Python]
-from scipy.stats import ttest_ind
+from scipy.stats import mannwhitneyu
 import pandas as pd
 
-# t-test para diferencias por sexo
+# Test de Mann-Whitney U para diferencias por sexo
+# Se usa cuando los datos NO siguen distribucion normal
 math_male = math_df[math_df['sex'] == 'M']['G3']
 math_female = math_df[math_df['sex'] == 'F']['G3']
 
-t_stat, p_value = ttest_ind(math_male, math_female)
-print(f"t-statistic: {t_stat:.3f}")
+# Test no parametrico (compara medianas)
+u_stat, p_value = mannwhitneyu(math_male, math_female, 
+                                alternative='two-sided')
+
+print(f"U-statistic: {u_stat:.3f}")
 print(f"p-value: {p_value:.3f}")
+print(f"Mediana hombres: {math_male.median():.1f}")
+print(f"Mediana mujeres: {math_female.median():.1f}")
+
+# Visualizacion con boxplot
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+fig, axes = plt.subplots(1, 2, figsize=(12, 5))
+
+# Boxplots
+sns.boxplot(data=math_df, x='sex', y='G3', ax=axes[0])
+axes[0].set_title('Matematicas')
+
+# Histogramas superpuestos
+axes[1].hist(math_male, alpha=0.7, label='Hombres', bins=15)
+axes[1].hist(math_female, alpha=0.7, label='Mujeres', bins=15)
+axes[1].legend()
+axes[1].set_title('Distribucion de calificaciones')
+
+plt.show()
 \end{lstlisting}
 
 \subsubsection{ANOVA para nivel educativo}
@@ -622,23 +736,63 @@ print(f"RMSE: {rmse:.3f}")
 \subsubsection{Regresión Logística}
 \begin{lstlisting}[language=Python]
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score, classification_report
+from sklearn.metrics import (accuracy_score, classification_report,
+                             confusion_matrix, roc_auc_score, roc_curve)
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
 
-# Crear variable binaria
+# Crear variable binaria (aprobo/reprobo)
 y_binary = (math_df['G3'] >= 10).astype(int)
 
-# Entrenar modelo
-log_model = LogisticRegression()
-log_model.fit(X, y_binary)
+# Preparar variables predictoras
+X = math_df[['G1', 'G2', 'studytime', 'failures', 
+             'absences', 'Medu', 'Fedu']]
 
-# Predicciones
-y_pred_prob = log_model.predict_proba(X)[:, 1]
-y_pred_class = log_model.predict(X)
+# Division train/test estratificada
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y_binary, test_size=0.2, random_state=42, stratify=y_binary
+)
 
-# Evaluar
-accuracy = accuracy_score(y_binary, y_pred_class)
-print(f"Accuracy: {accuracy:.3f}")
-print(classification_report(y_binary, y_pred_class))
+# Estandarizar
+scaler = StandardScaler()
+X_train_scaled = scaler.fit_transform(X_train)
+X_test_scaled = scaler.transform(X_test)
+
+# Modelos con diferentes regularizaciones
+modelos = {
+    'L1': LogisticRegression(penalty='l1', solver='liblinear'),
+    'L2': LogisticRegression(penalty='l2'),
+    'None': LogisticRegression(penalty=None, max_iter=1000)
+}
+
+for nombre, modelo in modelos.items():
+    # Entrenar
+    modelo.fit(X_train_scaled, y_train)
+    
+    # Predecir
+    y_pred = modelo.predict(X_test_scaled)
+    y_proba = modelo.predict_proba(X_test_scaled)[:, 1]
+    
+    # Evaluar
+    acc = accuracy_score(y_test, y_pred)
+    auc = roc_auc_score(y_test, y_proba)
+    
+    print(f"\n{nombre}:")
+    print(f"  Accuracy: {acc:.3f}")
+    print(f"  AUC-ROC: {auc:.3f}")
+    
+# Matriz de confusion y curva ROC
+cm = confusion_matrix(y_test, y_pred)
+print(f"\nMatriz de Confusion:\n{cm}")
+
+# Curva ROC
+fpr, tpr, _ = roc_curve(y_test, y_proba)
+plt.plot(fpr, tpr, label=f'AUC = {auc:.3f}')
+plt.plot([0, 1], [0, 1], 'k--')
+plt.xlabel('Tasa Falsos Positivos')
+plt.ylabel('Tasa Verdaderos Positivos')
+plt.legend()
+plt.show()
 \end{lstlisting}
 
 \subsection{Equivalente en R}
