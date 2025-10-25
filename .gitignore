@@ -1,1 +1,13 @@
 .venv
+ # sitema
+ .DS_Store
+ Thumbs.db
+
+ # Latex
+    *.aux
+    *.lof
+    *.log
+    *.lot
+    *.fls
+    *.toc
+    *.synctex.gz
