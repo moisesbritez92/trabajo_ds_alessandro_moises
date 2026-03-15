@@ -4,7 +4,7 @@ Proyecto colaborativo de Ciencia de Datos desarrollado por [@moisesbritez92](htt
 
 ## Descripción
 
-Este repositorio documenta un análisis del rendimiento académico de estudiantes portugueses a partir del dataset **Student Performance** (UCI). El trabajo integra limpieza de datos, análisis exploratorio, pruebas estadísticas y modelos predictivos para explicar y estimar la calificación final (**G3**).
+Este repositorio documenta un análisis del rendimiento académico de estudiantes a partir del dataset **Student Performance** (UCI). El trabajo integra limpieza de datos, análisis exploratorio, pruebas estadísticas y modelos predictivos para explicar y estimar la calificación final (**G3**).
 
 ## Objetivo general
 
@@ -85,4 +85,4 @@ jupyter notebook
 - **Moises Britez** — [@moisesbritez92](https://github.com/moisesbritez92)
 - **Alessandro Flammia** — [@aflammia](https://github.com/aflammia)
 
-> MADI
+> MADI - TECNUN
