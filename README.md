@@ -1,6 +1,6 @@
 ﻿# Trabajo Práctico de Data Science
 
-Proyecto colaborativo de Ciencia de Datos desarrollado por [@moisesbritez92](https://github.com/moisesbritez92) y [@aleflammia](https://github.com/aleflammia).
+Proyecto colaborativo de Ciencia de Datos desarrollado por [@moisesbritez92](https://github.com/moisesbritez92) y [@aflammia](https://github.com/aflammia).
 
 ## Descripción
 
